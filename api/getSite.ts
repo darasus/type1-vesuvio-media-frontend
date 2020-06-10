@@ -1,3 +1,5 @@
+import { parseGetSite } from './parsers/parseGetSite';
+
 export const getSite = async () => {
   const response = await fetch(
     `https://nippel.systems/sites/${process.env.SITE_ID}`
@@ -5,5 +7,5 @@ export const getSite = async () => {
 
   const data = await response.json();
 
-  return data;
+  return parseGetSite(data);
 };

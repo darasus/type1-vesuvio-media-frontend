@@ -1,7 +1,7 @@
 module.exports = () => {
   return {
     env: {
-      SITE_ID: 1,
+      SITE_ID: 2,
     },
   };
 };

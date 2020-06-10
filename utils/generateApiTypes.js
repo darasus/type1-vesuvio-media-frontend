@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const generateApiTypes = async () => {
-  const response = await fetch('https://nippel.systems/sites/1');
+  const response = await fetch('https://nippel.systems/sites/2');
   const data = await response.json();
 
   fs.writeFile(
