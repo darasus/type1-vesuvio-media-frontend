@@ -17,6 +17,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
       createdAt: response.home_page.created_at,
       updatedAt: response.home_page.updated_at,
     },
+    primaryColor: response.primary_color,
     articles: [],
     products: response.products.map(item => {
       return {

@@ -5,10 +5,12 @@ import ReactMarkdown from 'react-markdown';
 import { Data } from '../types/Data';
 
 const Home = (props: Data) => {
-  console.log(props);
   return (
     <>
-      <ReactMarkdown source={props.homePage.introductionText} />
+      <ReactMarkdown
+        className="font-medium text-gray-800"
+        source={props.homePage.introductionText}
+      />
       {props.products.map(item => {
         return (
           <div
@@ -33,7 +35,7 @@ const Home = (props: Data) => {
                 <a
                   href={item.url}
                   target="_blank"
-                  className="mb-3 inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-blue-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                  className="mb-3 inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-primary-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                 >
                   Buy now
                 </a>
@@ -49,7 +51,10 @@ const Home = (props: Data) => {
           </div>
         );
       })}
-      <ReactMarkdown source={props.homePage.mainText} />
+      <ReactMarkdown
+        className="font-medium text-gray-800"
+        source={props.homePage.mainText}
+      />
     </>
   );
 };
