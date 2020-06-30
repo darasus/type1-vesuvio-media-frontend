@@ -8,8 +8,9 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>{`Home | ${pageProps?.site?.title}`}</title>
-        <style>
-          {`
+        {pageProps?.primaryColor && (
+          <style>
+            {`
             :root {
               --primary-color-100: ${darken(-0.4, pageProps.primaryColor)};
               --primary-color-200: ${darken(-0.3, pageProps.primaryColor)};
@@ -22,7 +23,8 @@ const App = ({ Component, pageProps }) => {
               --primary-color-900: ${darken(0.4, pageProps.primaryColor)};
             }
           `}
-        </style>
+          </style>
+        )}
       </Head>
       <Header title={pageProps?.site?.title} />
       <div className="container mx-auto py-5">
