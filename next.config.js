@@ -1,7 +1,7 @@
 module.exports = () => {
   return {
     env: {
-      SITE_ID: 2,
+      SITE_ID: process.env.SITE_ID,
     },
   };
 };
