@@ -1,7 +1,6 @@
 const { createDeployment } = require('@vercel/client');
 const fetch = require('isomorphic-fetch');
 const path = require('path');
-const { triggerAsyncId } = require('async_hooks');
 
 const outputFolder = path.resolve(process.cwd());
 
