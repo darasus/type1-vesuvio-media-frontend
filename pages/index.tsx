@@ -8,21 +8,21 @@ const Home = (props: Data) => {
   return (
     <>
       <ReactMarkdown
-        className="font-medium text-gray-800"
+        className="font-medium text-gray-800 mb-5"
         source={props.homePage.introductionText}
       />
       {props.products.map(item => {
         return (
           <div
-            className="max-w-sm w-full lg:max-w-full lg:flex shadow-lg"
+            className="w-full lg:max-w-full lg:flex shadow-lg mb-5 overflow-hidden rounded-lg"
             key={item.id}
           >
             <div
-              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center"
               style={{ backgroundImage: `url('${item.image.medium.src}')` }}
               title="Woman holding a mug"
             />
-            <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-row justify-between leading-normal">
+            <div className="bg-white p-4 flex flex-row justify-between leading-normal">
               <div className="mb-8">
                 <div className="text-gray-900 font-bold text-xl mb-2">
                   {item.title}

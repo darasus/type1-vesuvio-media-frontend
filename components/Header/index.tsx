@@ -13,7 +13,7 @@ export const Header: React.FC<Props> = ({ title }) => {
     <div className="relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="container mx-auto flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="lg:w-0 lg:flex-1 text-primary-500">
+          <div className="flex-1 text-primary-500">
             <Link href="/">
               <a className="font-medium">{title}</a>
             </Link>
