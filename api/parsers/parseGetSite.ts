@@ -1,5 +1,6 @@
 import { ResponseSite } from '../../generated/types';
 import { Data } from '../../types/Data';
+import { parseImage } from './parseImage';
 
 export const parseGetSite = (response: ResponseSite): Data => {
   return {
@@ -18,7 +19,18 @@ export const parseGetSite = (response: ResponseSite): Data => {
       updatedAt: response.home_page.updated_at,
     },
     primaryColor: response.primary_color,
-    articles: [],
+    articles: response.articles.map(article => {
+      return {
+        id: article.id,
+        title: article.title,
+        slug: article.slug,
+        body: article.body,
+        createdAt: article.created_at,
+        image: article.featured_image
+          ? parseImage(article.featured_image)
+          : null,
+      };
+    }),
     products: response.products.map(item => {
       return {
         id: item.id,
@@ -29,40 +41,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
         updatedAt: item.updated_at,
         site: item.site,
         shortDescription: item.short_description,
-        ...(item.Image && {
-          image: {
-            id: item.Image.id,
-            title: item.Image.name,
-            ...(item.Image.formats.large && {
-              large: {
-                src: item.Image.formats.large.url,
-                width: item.Image.formats.large.width,
-                height: item.Image.formats.large.height,
-              },
-            }),
-            ...(item.Image.formats.medium && {
-              medium: {
-                src: item.Image.formats.medium.url,
-                width: item.Image.formats.medium.width,
-                height: item.Image.formats.medium.height,
-              },
-            }),
-            ...(item.Image.formats.small && {
-              small: {
-                src: item.Image.formats.small.url,
-                width: item.Image.formats.small.width,
-                height: item.Image.formats.small.height,
-              },
-            }),
-            ...(item.Image.formats.thumbnail && {
-              thumbnail: {
-                src: item.Image.formats.thumbnail.url,
-                width: item.Image.formats.thumbnail.width,
-                height: item.Image.formats.thumbnail.height,
-              },
-            }),
-          },
-        }),
+        image: item.Image ? parseImage(item.Image) : null,
       };
     }),
   };

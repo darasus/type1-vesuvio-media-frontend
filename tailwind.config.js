@@ -38,6 +38,7 @@ module.exports = {
         800: 'var(--primary-color-800)',
         900: 'var(--primary-color-900)',
       },
+      yellow: '#F6E05E',
     },
     spacing: {
       px: '1px',

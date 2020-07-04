@@ -47,51 +47,10 @@ export interface ResponseFeatured_image {
     updated_at: string;
 }
 export interface ResponseFormats {
-    thumbnail: ResponseThumbnail;
     large?: ResponseLarge;
-    small?: ResponseSmall;
+    small: ResponseSmall;
     medium?: ResponseMedium;
-}
-export interface ResponseThumbnail {
-    ext: string;
-    url: string;
-    hash: string;
-    mime: string;
-    path: null;
-    size: number;
-    width: number;
-    height: number;
-}
-export interface ResponseProductsItem {
-    id: number;
-    slug: string;
-    title: string;
-    url: string;
-    site: number;
-    created_at: string;
-    updated_at: string;
-    Description: string;
-    short_description: string;
-    Image: ResponseImage;
-}
-export interface ResponseImage {
-    id: number;
-    name: string;
-    alternativeText: string;
-    caption: string;
-    width: number;
-    height: number;
-    formats: ResponseFormats;
-    hash: string;
-    ext: string;
-    mime: string;
-    size: number;
-    url: string;
-    previewUrl: null;
-    provider: string;
-    provider_metadata: null;
-    created_at: string;
-    updated_at: string;
+    thumbnail: ResponseThumbnail;
 }
 export interface ResponseLarge {
     ext: string;
@@ -122,4 +81,45 @@ export interface ResponseMedium {
     size: number;
     width: number;
     height: number;
+}
+export interface ResponseThumbnail {
+    ext: string;
+    url: string;
+    hash: string;
+    mime: string;
+    path: null;
+    size: number;
+    width: number;
+    height: number;
+}
+export interface ResponseProductsItem {
+    id: number;
+    slug: string;
+    title: string;
+    url: string;
+    site: number;
+    created_at: string;
+    updated_at: string;
+    Description: string | null;
+    short_description: string;
+    Image: ResponseImage;
+}
+export interface ResponseImage {
+    id: number;
+    name: string;
+    alternativeText: string;
+    caption: string;
+    width: number;
+    height: number;
+    formats: ResponseFormats;
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl: null;
+    provider: string;
+    provider_metadata: null;
+    created_at: string;
+    updated_at: string;
 }

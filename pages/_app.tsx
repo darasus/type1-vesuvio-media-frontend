@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }) => {
           `}
           </style>
         )}
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Header {...pageProps} />
       <div className="container mx-auto py-5">

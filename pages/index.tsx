@@ -4,6 +4,7 @@ import { getSite } from '../api/getSite';
 import ReactMarkdown from 'react-markdown';
 import { Data } from '../types/Data';
 import { ButtonLink } from '../components/Button';
+import { Icon } from '../components/Icon';
 
 const Home = (props: Data) => {
   return (
@@ -32,8 +33,15 @@ const Home = (props: Data) => {
             )}
             <div className="bg-white p-4 w-5/6 flex flex-row justify-between leading-normal">
               <div className="mr-8">
-                <div className="text-gray-900 font-bold text-xl mb-2">
+                <div className="text-gray-900 font-bold text-xl mb-1">
                   {item?.title}
+                </div>
+                <div className="flex mb-1">
+                  <Icon icon="star" className="text-yellow" />
+                  <Icon icon="star" className="text-yellow" />
+                  <Icon icon="star" className="text-yellow" />
+                  <Icon icon="star" />
+                  <Icon icon="star" />
                 </div>
                 <p className="text-gray-700 text-base">
                   {item.shortDescription}
