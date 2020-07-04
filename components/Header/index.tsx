@@ -12,7 +12,9 @@ export const Header: React.FC<Data> = props => {
         <div className="container mx-auto flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex-1 text-primary-500">
             <Link href="/">
-              <a className="text-lg font-bold uppercase">{props.site.title}</a>
+              <a className="text-lg font-bold uppercase">
+                {props?.site?.title}
+              </a>
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">

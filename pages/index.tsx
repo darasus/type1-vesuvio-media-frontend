@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import { getSite } from '../api/getSite';
 import ReactMarkdown from 'react-markdown';
 import { Data } from '../types/Data';
+import { ButtonLink } from '../components/Button';
 
 const Home = (props: Data) => {
   return (
@@ -32,27 +33,19 @@ const Home = (props: Data) => {
             <div className="bg-white p-4 w-5/6 flex flex-row justify-between leading-normal">
               <div className="mr-8">
                 <div className="text-gray-900 font-bold text-xl mb-2">
-                  {item.title}
+                  {item?.title}
                 </div>
                 <p className="text-gray-700 text-base">
                   {item.shortDescription}
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  className="mb-3 inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-primary-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                >
+                <ButtonLink href={item.url} target="_blank" className="mb-4">
                   Buy now
-                </a>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  className="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                >
+                </ButtonLink>
+                <ButtonLink href={item.url} target="_blank" variant="secondary">
                   Learn more
-                </a>
+                </ButtonLink>
               </div>
             </div>
           </div>
