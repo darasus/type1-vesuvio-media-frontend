@@ -29,30 +29,40 @@ export const parseGetSite = (response: ResponseSite): Data => {
         updatedAt: item.updated_at,
         site: item.site,
         shortDescription: item.short_description,
-        image: {
-          id: item.Image.id,
-          title: item.Image.name,
-          large: {
-            src: item.Image.formats.large.url,
-            width: item.Image.formats.large.width,
-            height: item.Image.formats.large.height,
+        ...(item.Image && {
+          image: {
+            id: item.Image.id,
+            title: item.Image.name,
+            ...(item.Image.formats.large && {
+              large: {
+                src: item.Image.formats.large.url,
+                width: item.Image.formats.large.width,
+                height: item.Image.formats.large.height,
+              },
+            }),
+            ...(item.Image.formats.medium && {
+              medium: {
+                src: item.Image.formats.medium.url,
+                width: item.Image.formats.medium.width,
+                height: item.Image.formats.medium.height,
+              },
+            }),
+            ...(item.Image.formats.small && {
+              small: {
+                src: item.Image.formats.small.url,
+                width: item.Image.formats.small.width,
+                height: item.Image.formats.small.height,
+              },
+            }),
+            ...(item.Image.formats.thumbnail && {
+              thumbnail: {
+                src: item.Image.formats.thumbnail.url,
+                width: item.Image.formats.thumbnail.width,
+                height: item.Image.formats.thumbnail.height,
+              },
+            }),
           },
-          medium: {
-            src: item.Image.formats.medium.url,
-            width: item.Image.formats.medium.width,
-            height: item.Image.formats.medium.height,
-          },
-          small: {
-            src: item.Image.formats.small.url,
-            width: item.Image.formats.small.width,
-            height: item.Image.formats.small.height,
-          },
-          thumbnail: {
-            src: item.Image.formats.thumbnail.url,
-            width: item.Image.formats.thumbnail.width,
-            height: item.Image.formats.thumbnail.height,
-          },
-        },
+        }),
       };
     }),
   };

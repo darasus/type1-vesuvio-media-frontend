@@ -7,25 +7,25 @@ export interface Product {
   updatedAt: string;
   site: number;
   shortDescription: string;
-  image: {
+  image?: {
     id: number;
     title: string;
-    large: {
+    large?: {
       src: string;
       width: number;
       height: number;
     };
-    medium: {
+    medium?: {
       src: string;
       width: number;
       height: number;
     };
-    small: {
+    small?: {
       src: string;
       width: number;
       height: number;
     };
-    thumbnail: {
+    thumbnail?: {
       src: string;
       width: number;
       height: number;

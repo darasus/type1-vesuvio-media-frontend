@@ -8,22 +8,29 @@ const Home = (props: Data) => {
   return (
     <>
       <ReactMarkdown
-        className="font-medium text-gray-800 mb-5"
+        className="font-medium mb-5"
         source={props.homePage.introductionText}
       />
       {props.products.map(item => {
         return (
           <div
-            className="w-full lg:max-w-full lg:flex shadow-lg mb-5 overflow-hidden rounded-lg"
+            className="w-full lg:max-w-full lg:flex mb-5 overflow-hidden rounded-lg border-2 border-gray-100 p-3"
             key={item.id}
           >
-            <div
-              className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center"
-              style={{ backgroundImage: `url('${item.image.medium.src}')` }}
-              title="Woman holding a mug"
-            />
-            <div className="bg-white p-4 flex flex-row justify-between leading-normal">
-              <div className="mb-8">
+            {(item.image?.medium?.src || item.image?.small?.src) && (
+              <div className="h-64 w-1/6 flex content-center items-center">
+                <img
+                  className="w-full h-auto"
+                  src={item.image?.medium?.src || item.image?.small?.src}
+                  width={item.image?.medium?.width || item.image?.small?.width}
+                  height={
+                    item.image?.medium?.height || item.image?.small?.height
+                  }
+                />
+              </div>
+            )}
+            <div className="bg-white p-4 w-5/6 flex flex-row justify-between leading-normal">
+              <div className="mr-8">
                 <div className="text-gray-900 font-bold text-xl mb-2">
                   {item.title}
                 </div>
@@ -51,10 +58,7 @@ const Home = (props: Data) => {
           </div>
         );
       })}
-      <ReactMarkdown
-        className="font-medium text-gray-800"
-        source={props.homePage.mainText}
-      />
+      <ReactMarkdown className="font-medium" source={props.homePage.mainText} />
     </>
   );
 };

@@ -2,6 +2,7 @@ import '../styles/index.css';
 import Head from 'next/head';
 import { Header } from '../components/Header';
 import { darken } from 'polished';
+import { Footer } from '../components/Footer';
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -26,10 +27,11 @@ const App = ({ Component, pageProps }) => {
           </style>
         )}
       </Head>
-      <Header title={pageProps?.site?.title} />
+      <Header {...pageProps} />
       <div className="container mx-auto py-5">
         <Component {...pageProps} />
       </div>
+      <Footer {...pageProps} />
     </>
   );
 };

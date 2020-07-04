@@ -1,21 +1,18 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { useState } from 'react';
+import { Data } from '../../types/Data';
 
-interface Props {
-  title: string;
-}
-
-export const Header: React.FC<Props> = ({ title }) => {
+export const Header: React.FC<Data> = props => {
   const [activeItem, setActiveItem] = useState(null);
 
   return (
-    <div className="relative bg-white">
+    <div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="container mx-auto flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex-1 text-primary-500">
             <Link href="/">
-              <a className="font-medium">{title}</a>
+              <a className="text-lg font-bold uppercase">{props.site.title}</a>
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -39,7 +36,7 @@ export const Header: React.FC<Props> = ({ title }) => {
           </div>
           <nav className="hidden md:flex space-x-10">
             <Link href="/">
-              <a className="text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+              <a className="group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                 <svg
                   className="flex-shrink-0 h-6 w-6 fill-current text-primary-500"
                   viewBox="0 0 24 24"
@@ -54,8 +51,8 @@ export const Header: React.FC<Props> = ({ title }) => {
                 <span>Home</span>
               </a>
             </Link>
-            <Link href="/">
-              <a className="text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+            <Link href="/articles">
+              <a className="group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                 <svg
                   className="flex-shrink-0 h-6 w-6 fill-current text-primary-500"
                   viewBox="0 0 24 24"
