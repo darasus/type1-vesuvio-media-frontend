@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.products.map(product => ({ params: { slug: product.slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

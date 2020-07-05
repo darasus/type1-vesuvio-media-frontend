@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.articles.map(article => ({ params: { slug: article.slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
