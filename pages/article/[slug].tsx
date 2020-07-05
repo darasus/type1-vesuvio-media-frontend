@@ -7,7 +7,11 @@ import ReactMarkdown from 'react-markdown';
 const Article = (props: Data) => {
   const router = useRouter();
   const { slug } = router.query;
-  const article = props.articles.find(article => article.slug === slug);
+  const article = props.articles?.find(article => article.slug === slug);
+
+  if (!article) {
+    return null;
+  }
 
   return (
     <div>

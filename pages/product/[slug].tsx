@@ -6,7 +6,12 @@ import { Data } from '../../types/Data';
 const Product = (props: Data) => {
   const router = useRouter();
   const { slug } = router.query;
-  const product = props.products.find(product => product.slug === slug);
+  const product = props.products?.find(product => product.slug === slug);
+
+  if (!product) {
+    return null;
+  }
+
   return (
     <div>
       <div>
