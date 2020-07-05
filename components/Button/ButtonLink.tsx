@@ -1,7 +1,7 @@
 import { HTMLProps } from 'react';
 import clsx from 'clsx';
 
-type Props = HTMLProps<HTMLAnchorElement> & {
+type Props = HTMLProps<HTMLSpanElement> & {
   variant?: 'primary' | 'secondary';
 };
 
@@ -12,7 +12,7 @@ export const ButtonLink: React.FC<Props> = ({
   ...props
 }) => {
   return (
-    <a
+    <span
       className={clsx(
         'inline-flex justify-center w-full rounded-md border font-bold uppercase leading-6 px-4 py-3 focus:outline-none shadow-sm hover:shadow-md focus:shadow-outline-blue transition ease-in-out duration-150',
         {
@@ -24,6 +24,6 @@ export const ButtonLink: React.FC<Props> = ({
       {...props}
     >
       {children}
-    </a>
+    </span>
   );
 };
