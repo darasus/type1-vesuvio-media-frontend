@@ -1,5 +1,4 @@
 const { createDeployment } = require('@vercel/client');
-const fetch = require('isomorphic-fetch');
 const path = require('path');
 
 const outputFolder = path.resolve(process.cwd());
@@ -49,13 +48,4 @@ async function deploy({ projectName, siteId }) {
   return deployment;
 }
 
-async function main() {
-  const response = await fetch('https://nippel.systems/sites');
-  const sites = await (await response).json();
-
-  sites.forEach(async site => {
-    await deploy({ projectName: `site-id-${site.id}`, siteId: site.id });
-  });
-}
-
-main();
+module.exports = { deploy };
