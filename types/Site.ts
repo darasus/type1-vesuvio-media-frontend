@@ -4,4 +4,5 @@ export interface Site {
   title: string;
   createdAt: string;
   updatedAt: string;
+  color: string;
 }
