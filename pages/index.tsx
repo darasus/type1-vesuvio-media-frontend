@@ -6,14 +6,13 @@ import { ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
 import { calcReadTime } from '../utils/calcReadTime';
 import clsx from 'clsx';
-import UndrawWorkout from 'react-undraw-illustrations/lib/components/UndrawWorkout';
 import { ArticlePreview } from '../components/ArticlePreview';
 import { ProductPreview } from '../components/ProductPreview';
 import Head from 'next/head';
 
 const Title: React.FC<{ title: string; className?: string }> = ({
   title,
-  className
+  className,
 }) => {
   return (
     <div className={clsx('flex flex-wrap w-full', className)}>
@@ -82,8 +81,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      ...data
-    }
+      ...data,
+    },
   };
 };
 
