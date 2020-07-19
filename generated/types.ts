@@ -17,18 +17,9 @@ export interface ResponseHome_page {
     created_at: string;
     updated_at: string;
     title: string;
+    intro_image: ResponseIntro_image;
 }
-export interface ResponseArticlesItem {
-    id: number;
-    slug: string;
-    title: string;
-    body: string;
-    site: number;
-    created_at: string;
-    updated_at: string;
-    featured_image: ResponseFeatured_image;
-}
-export interface ResponseFeatured_image {
+export interface ResponseIntro_image {
     id: number;
     name: string;
     alternativeText: string;
@@ -92,6 +83,35 @@ export interface ResponseThumbnail {
     size: number;
     width: number;
     height: number;
+}
+export interface ResponseArticlesItem {
+    id: number;
+    slug: string;
+    title: string;
+    body: string;
+    site: number;
+    created_at: string;
+    updated_at: string;
+    featured_image: ResponseFeatured_image;
+}
+export interface ResponseFeatured_image {
+    id: number;
+    name: string;
+    alternativeText: string;
+    caption: string;
+    width: number;
+    height: number;
+    formats: ResponseFormats;
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl: null;
+    provider: string;
+    provider_metadata: null;
+    created_at: string;
+    updated_at: string;
 }
 export interface ResponseProductsItem {
     id: number;

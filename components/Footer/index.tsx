@@ -4,15 +4,16 @@ import Link from 'next/link';
 export const Footer = (props: Data) => {
   return (
     <footer className="text-gray-700 bg-gray-100">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-16 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
-          <div className="lg:w-3/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              Articles
-            </h2>
-            <nav className="list-none mb-10">
+          {/* <div className="lg:w-3/4 md:w-1/2 w-full px-4"> */}
+          <div className="w-full px-4">
+            <span className="inline-block py-1 px-2 rounded bg-gray-200 text-gray-700 text-xs font-medium tracking-widest mb-3">
+              ARTICLES
+            </span>
+            <nav className="list-none">
               {props.articles?.map(article => (
-                <li>
+                <div key={article.id}>
                   <Link href={`/article/${article.slug}`}>
                     <a
                       className="text-gray-600 hover:text-gray-800"
@@ -21,11 +22,11 @@ export const Footer = (props: Data) => {
                       {article.title}
                     </a>
                   </Link>
-                </li>
+                </div>
               )) || null}
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          {/* <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
               SUBSCRIBE
             </h2>
@@ -44,7 +45,7 @@ export const Footer = (props: Data) => {
               <br className="lg:block hidden" />
               waistcoat green juice
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="bg-gray-200">
@@ -52,7 +53,7 @@ export const Footer = (props: Data) => {
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
             {`© 2020 ${props?.site?.title}`}
           </p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          {/* <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a className="text-gray-500">
               <svg
                 fill="currentColor"
@@ -108,7 +109,7 @@ export const Footer = (props: Data) => {
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
             </a>
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>

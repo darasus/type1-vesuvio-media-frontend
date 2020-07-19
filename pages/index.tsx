@@ -29,11 +29,6 @@ const Title: React.FC<{ title: string; className?: string }> = ({
 const Home = (props: Data) => {
   return (
     <>
-      {/* <ReactMarkdown
-        className="font-medium mb-5"
-        source={props.homePage.introductionText}
-      />
-      <ReactMarkdown className="font-medium" source={props.homePage.mainText} /> */}
       <Head>
         <title>{props.homePage.title}</title>
         <meta name="Description" content={props.homePage.introductionText} />
@@ -49,20 +44,34 @@ const Home = (props: Data) => {
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <UndrawWorkout primaryColor={props.site.color} />
+            {props.homePage.image && (
+              <img
+                src={props.homePage.image.small.src}
+                height={props.homePage.image.small.height}
+                width={props.homePage.image.small.width}
+              />
+            )}
           </div>
         </div>
       </section>
       <section className="mb-20">
         <Title title="Products" className="mb-20" />
         {props.products.map(product => (
-          <ProductPreview product={product} className="mb-10" />
+          <ProductPreview
+            key={product.id}
+            product={product}
+            className="mb-10"
+          />
         ))}
       </section>
       <section>
         <Title title="Latest articles" className="mb-20" />
         {props.articles.map(article => (
-          <ArticlePreview article={article} className="mb-10" />
+          <ArticlePreview
+            key={article.id}
+            article={article}
+            className="mb-10"
+          />
         ))}
       </section>
     </>

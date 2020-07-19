@@ -18,7 +18,10 @@ export const parseGetSite = (response: ResponseSite): Data => {
       introductionText: response.home_page.introduction_text,
       mainText: response.home_page.main_text,
       createdAt: response.home_page.created_at,
-      updatedAt: response.home_page.updated_at
+      updatedAt: response.home_page.updated_at,
+      image: response.home_page.intro_image
+        ? parseImage(response.home_page.intro_image)
+        : null
     },
     primaryColor: response.primary_color,
     articles: response.articles.map(article => {

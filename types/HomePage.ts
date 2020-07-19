@@ -1,3 +1,5 @@
+import { Image } from './Image';
+
 export interface HomePage {
   id: number;
   introductionText: string;
@@ -5,4 +7,5 @@ export interface HomePage {
   mainText: string;
   createdAt: string;
   updatedAt: string;
+  image: Image;
 }
