@@ -1,7 +1,11 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+});
+
 module.exports = () => {
-  return {
+  return withBundleAnalyzer({
     env: {
-      SITE_ID: process.env.SITE_ID,
-    },
-  };
+      SITE_ID: process.env.SITE_ID
+    }
+  });
 };

@@ -9,7 +9,10 @@
     "export": "next export",
     "prestart": "yarn export",
     "start": "serve out",
-    "generate": "node utils/generateApiTypes.js"
+    "generate": "node utils/generateApiTypes.js",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@vercel/client": "^8.1.0",
@@ -24,10 +27,12 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@next/bundle-analyzer": "^9.4.4",
     "@types/node": "^14.0.9",
     "@types/react": "^16.9.35",
     "@vercel/build-utils": "^2.4.0",
     "autoprefixer": "^9.8.0",
+    "cross-env": "^7.0.2",
     "isomorphic-fetch": "^2.2.1",
     "json-ts": "^1.6.4",
     "postcss-cli": "^7.1.1",
