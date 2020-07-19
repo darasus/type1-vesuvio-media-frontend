@@ -18,18 +18,22 @@ const Article = (props: Data) => {
     <>
       <Head>
         <title>{`${article.title} | ${props.site.title}`}</title>
-        <meta name="Description" content={article.title} />
+        <meta name="Title" content={article.title} />
+        <meta
+          name="Description"
+          content={`${article.body.substr(0, 100)}...`}
+        />
       </Head>
       <div>
-        <h1 className="text-4xl mb-4">{article.title}</h1>
-        <div className="overflow-hidden rounded-lg mb-10">
-          <img
-            className="w-full"
-            src={article.image.large.src}
-            alt={article.title}
-          />
+        <div className="flex lg:flex-row flex-col items-center">
+          <div className="overflow-hidden rounded-lg lg:mb-10 mb-5 lg:w-1/2 lg:mr-10">
+            <img src={article.image.large.src} alt={article.title} />
+          </div>
+          <div className="lg:w-1/2">
+            <h1 className="text-4xl mb-4 font-bold">{article.title}</h1>
+          </div>
         </div>
-        <ReactMarkdown>{article.body}</ReactMarkdown>
+        <ReactMarkdown className="mb-5">{article.body}</ReactMarkdown>
       </div>
     </>
   );
@@ -40,7 +44,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.articles.map(article => ({ params: { slug: article.slug } })),
-    fallback: false
+    fallback: false,
   };
 }
 
@@ -49,8 +53,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      ...data
-    }
+      ...data,
+    },
   };
 };
 

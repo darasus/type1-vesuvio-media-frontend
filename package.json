@@ -21,8 +21,7 @@
     "polished": "^3.6.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-markdown": "^4.3.1",
-    "unfetch": "^4.1.0"
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
