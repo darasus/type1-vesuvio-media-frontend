@@ -24,6 +24,7 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
             height={
               product.image?.medium?.height || product.image?.small?.height
             }
+            alt={product.title}
           />
         )}
         <div className="lg:w-3/4 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -38,9 +39,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-4 h-4 text-primary-500"
                 viewBox="0 0 24 24"
               >
@@ -49,9 +50,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-4 h-4 text-primary-500"
                 viewBox="0 0 24 24"
               >
@@ -60,9 +61,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-4 h-4 text-primary-500"
                 viewBox="0 0 24 24"
               >
@@ -71,9 +72,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-4 h-4 text-primary-500"
                 viewBox="0 0 24 24"
               >
@@ -82,9 +83,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-4 h-4 text-primary-500"
                 viewBox="0 0 24 24"
               >
@@ -96,9 +97,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <a className="text-gray-500">
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
@@ -108,9 +109,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <a className="ml-2 text-gray-500">
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
@@ -120,9 +121,9 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
               <a className="ml-2 text-gray-500">
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >

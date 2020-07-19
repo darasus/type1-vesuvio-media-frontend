@@ -10,6 +10,7 @@ import clsx from 'clsx';
 import { UndrawWorkout } from 'react-undraw-illustrations';
 import { ArticlePreview } from '../components/ArticlePreview';
 import { ProductPreview } from '../components/ProductPreview';
+import Head from 'next/head';
 
 const Title: React.FC<{ title: string; className?: string }> = ({
   title,
@@ -33,11 +34,15 @@ const Home = (props: Data) => {
         source={props.homePage.introductionText}
       />
       <ReactMarkdown className="font-medium" source={props.homePage.mainText} /> */}
+      <Head>
+        <title>{props.homePage.title}</title>
+        <meta name="Description" content={props.homePage.introductionText} />
+      </Head>
       <section className="mb-20">
         <div className="flex py-16 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Before they sold out readymade gluten
+              {props.homePage.title}
             </h1>
             <p className="mb-8 leading-relaxed">
               {props.homePage.introductionText}

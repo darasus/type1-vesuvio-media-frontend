@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import { Data } from '../../types/Data';
 import ReactMarkdown from 'react-markdown';
+import Head from 'next/head';
 
 const Article = (props: Data) => {
   const router = useRouter();
@@ -14,13 +15,23 @@ const Article = (props: Data) => {
   }
 
   return (
-    <div>
-      <h1 className="text-4xl mb-4">{article.title}</h1>
-      <div className="overflow-hidden rounded-lg mb-10">
-        <img className="w-full" src={article.image.large.src} />
+    <>
+      <Head>
+        <title>{`${article.title} | ${props.site.title}`}</title>
+        <meta name="Description" content={article.title} />
+      </Head>
+      <div>
+        <h1 className="text-4xl mb-4">{article.title}</h1>
+        <div className="overflow-hidden rounded-lg mb-10">
+          <img
+            className="w-full"
+            src={article.image.large.src}
+            alt={article.title}
+          />
+        </div>
+        <ReactMarkdown>{article.body}</ReactMarkdown>
       </div>
-      <ReactMarkdown>{article.body}</ReactMarkdown>
-    </div>
+    </>
   );
 };
 
@@ -29,7 +40,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.articles.map(article => ({ params: { slug: article.slug } })),
-    fallback: false,
+    fallback: false
   };
 }
 
@@ -38,8 +49,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      ...data,
-    },
+      ...data
+    }
   };
 };
 

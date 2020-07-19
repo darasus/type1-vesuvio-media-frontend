@@ -16,6 +16,7 @@ export interface ResponseHome_page {
     site: number;
     created_at: string;
     updated_at: string;
+    title: string;
 }
 export interface ResponseArticlesItem {
     id: number;

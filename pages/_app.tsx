@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Header } from '../components/Header';
 import { darken } from 'polished';
 import { Footer } from '../components/Footer';
+import { env } from 'process';
 
 const App = ({ Component, pageProps }) => {
   return (
