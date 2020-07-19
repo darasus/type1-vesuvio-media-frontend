@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { getSite } from '../api/getSite';
-import ReactMarkdown from 'react-markdown';
 import { Data } from '../types/Data';
 import { ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
