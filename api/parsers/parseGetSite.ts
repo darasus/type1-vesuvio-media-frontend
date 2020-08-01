@@ -10,7 +10,8 @@ export const parseGetSite = (response: ResponseSite): Data => {
       title: response.title,
       createdAt: response.created_at,
       updatedAt: response.updated_at,
-      color: response.primary_color
+      color: response.primary_color,
+      isPublished: response.is_published,
     },
     homePage: {
       id: response.home_page.id,
@@ -21,7 +22,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
       updatedAt: response.home_page.updated_at,
       image: response.home_page.intro_image
         ? parseImage(response.home_page.intro_image)
-        : null
+        : null,
     },
     primaryColor: response.primary_color,
     articles: response.articles.map(article => {
@@ -33,7 +34,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
         createdAt: article.created_at,
         image: article.featured_image
           ? parseImage(article.featured_image)
-          : null
+          : null,
       };
     }),
     products: response.products.map(item => {
@@ -46,8 +47,8 @@ export const parseGetSite = (response: ResponseSite): Data => {
         updatedAt: item.updated_at,
         site: item.site,
         shortDescription: item.short_description,
-        image: item.Image ? parseImage(item.Image) : null
+        image: item.Image ? parseImage(item.Image) : null,
       };
-    })
+    }),
   };
 };

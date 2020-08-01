@@ -5,4 +5,5 @@ export interface Site {
   createdAt: string;
   updatedAt: string;
   color: string;
+  isPublished: boolean;
 }

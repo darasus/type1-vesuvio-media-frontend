@@ -5,6 +5,10 @@ import { darken } from 'polished';
 import { Footer } from '../components/Footer';
 
 const App = ({ Component, pageProps }) => {
+  if (!pageProps.site.isPublished) {
+    return <div>Site is not published yet...</div>;
+  }
+
   return (
     <>
       <Head>

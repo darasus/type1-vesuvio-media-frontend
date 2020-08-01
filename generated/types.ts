@@ -6,6 +6,7 @@ export interface ResponseSite {
     updated_at: string;
     home_page: ResponseHome_page;
     primary_color: string;
+    is_published: boolean;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -17,6 +18,8 @@ export interface ResponseHome_page {
     created_at: string;
     updated_at: string;
     title: string;
+    seo_title: null;
+    seo_description: null;
     intro_image: ResponseIntro_image;
 }
 export interface ResponseIntro_image {
@@ -92,6 +95,8 @@ export interface ResponseArticlesItem {
     site: number;
     created_at: string;
     updated_at: string;
+    seo_title: null;
+    seo_description: null;
     featured_image: ResponseFeatured_image;
 }
 export interface ResponseFeatured_image {
