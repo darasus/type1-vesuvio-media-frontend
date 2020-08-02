@@ -25,18 +25,20 @@ export const parseGetSite = (response: ResponseSite): Data => {
         : null,
     },
     primaryColor: response.primary_color,
-    articles: response.articles.map(article => {
-      return {
-        id: article.id,
-        title: article.title,
-        slug: article.slug,
-        body: article.body,
-        createdAt: article.created_at,
-        image: article.featured_image
-          ? parseImage(article.featured_image)
-          : null,
-      };
-    }),
+    articles: response.articles
+      .filter(article => article.is_published)
+      .map(article => {
+        return {
+          id: article.id,
+          title: article.title,
+          slug: article.slug,
+          body: article.body,
+          createdAt: article.created_at,
+          image: article.featured_image
+            ? parseImage(article.featured_image)
+            : null,
+        };
+      }),
     products: response.products.map(item => {
       return {
         id: item.id,

@@ -97,6 +97,7 @@ export interface ResponseArticlesItem {
     updated_at: string;
     seo_title: null;
     seo_description: null;
+    is_published: boolean;
     featured_image: ResponseFeatured_image;
 }
 export interface ResponseFeatured_image {
