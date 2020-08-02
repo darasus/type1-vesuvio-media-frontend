@@ -13,6 +13,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
       color: response.primary_color,
       isPublished: response.is_published,
       isNoIndex: response.is_no_index,
+      domainName: response.domain_name,
     },
     homePage: {
       id: response.home_page.id,

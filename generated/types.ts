@@ -7,7 +7,8 @@ export interface ResponseSite {
     home_page: ResponseHome_page;
     primary_color: string;
     is_published: boolean;
-    is_no_index: null;
+    is_no_index: boolean;
+    domain_name: string;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -99,6 +100,7 @@ export interface ResponseArticlesItem {
     seo_title: null;
     seo_description: null;
     is_published: boolean;
+    domain_name: null;
     featured_image: ResponseFeatured_image;
 }
 export interface ResponseFeatured_image {

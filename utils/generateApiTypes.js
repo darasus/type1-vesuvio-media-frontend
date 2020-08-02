@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const generateApiTypes = async () => {
-  const response = await fetch('https://type1.vesuviomedia.com/sites/2');
+  console.log(process.env.API_BASE);
+  const response = await fetch(`${process.env.API_BASE}/sites/2`);
   const data = await response.json();
 
   fs.writeFile(

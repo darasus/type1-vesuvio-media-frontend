@@ -3,7 +3,7 @@ const { deploy } = require('./api/deploy');
 const fetch = require('isomorphic-fetch');
 
 async function main() {
-  const response = await fetch('https://type1.vesuviomedia.com/sites');
+  const response = await fetch(`${process.env.API_BASE}/sites`);
   const sites = await (await response).json();
 
   sites.forEach(async site => {

@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "env-cmd next dev",
     "build": "next build",
     "preexport": "yarn build",
     "export": "next export",
     "prestart": "yarn export",
     "start": "serve out",
-    "generate": "node utils/generateApiTypes.js",
+    "generate": "env-cmd node utils/generateApiTypes.js",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
@@ -33,6 +33,7 @@
     "@vercel/build-utils": "^2.4.0",
     "autoprefixer": "^9.8.0",
     "cross-env": "^7.0.2",
+    "env-cmd": "^10.1.0",
     "globby": "^11.0.1",
     "isomorphic-fetch": "^2.2.1",
     "json-ts": "^1.6.4",

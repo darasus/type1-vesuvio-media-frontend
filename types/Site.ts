@@ -7,4 +7,5 @@ export interface Site {
   color: string;
   isPublished: boolean;
   isNoIndex: boolean;
+  domainName: string;
 }
