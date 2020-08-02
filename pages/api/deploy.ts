@@ -3,6 +3,7 @@ const { deploy } = require('../../api/deploy');
 export default (req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
+  console.log(req.body);
   const siteId = req.body?.entry?.site?.id;
   if (siteId) {
     deploy({ projectName: `site-id-${siteId}`, siteId: siteId });
