@@ -17,6 +17,7 @@
   "dependencies": {
     "@vercel/client": "^8.1.0",
     "clsx": "^1.1.1",
+    "cors": "^2.8.5",
     "next": "9.4.4",
     "polished": "^3.6.5",
     "react": "16.13.1",

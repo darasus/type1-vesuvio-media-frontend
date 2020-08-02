@@ -1,9 +1,28 @@
 const { deploy } = require('../../api/deploy');
+import Cors from 'cors';
 
-export default (req, res) => {
+const cors = Cors({
+  methods: ['POST'],
+});
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, result => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
+
+async function handler(req, res) {
+  // Run the middleware
+  await runMiddleware(req, res, cors);
+
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  console.log(req.body);
   const siteId = req.body?.entry?.site?.id;
   if (siteId) {
     deploy({ projectName: `site-id-${siteId}`, siteId: siteId });
@@ -11,4 +30,6 @@ export default (req, res) => {
   } else {
     res.end('❌ Error deploying...');
   }
-};
+}
+
+export default handler;

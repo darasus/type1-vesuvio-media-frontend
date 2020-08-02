@@ -8,9 +8,9 @@ async function deploy({ projectName, siteId }) {
 
   for await (const event of createDeployment(
     {
-      token: 'cCemgwCdZlZqfFAzl8C1cRoT',
+      token: 'qy5l9zSArirn6f1214G3xADi',
       path: outputFolder,
-      teamId: 'nippel-systems-network',
+      teamId: 'vesuvio-media',
     },
     {
       name: projectName,
