@@ -1,11 +1,18 @@
+const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
+  enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = () => {
-  return withBundleAnalyzer({
-    env: {
-      SITE_ID: process.env.SITE_ID
+const nextConfig = {
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
     }
-  });
+
+    return {
+      ...config,
+    };
+  },
 };
+
+module.exports = withPlugins([withBundleAnalyzer], nextConfig);
