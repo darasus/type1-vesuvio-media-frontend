@@ -30,7 +30,9 @@ const App = ({ Component, pageProps }) => {
           `}
           </style>
         )}
-        <meta name="robots" content="noindex, nofollow" />
+        {(process.env.NO_INDEX || pageProps?.site?.isNoIndex) && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
       </Head>
       <Header {...pageProps} />
       <div className="container mx-auto py-5 px-5">

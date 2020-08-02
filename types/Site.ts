@@ -6,4 +6,5 @@ export interface Site {
   updatedAt: string;
   color: string;
   isPublished: boolean;
+  isNoIndex: boolean;
 }

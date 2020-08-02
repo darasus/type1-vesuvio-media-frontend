@@ -7,6 +7,7 @@ export interface ResponseSite {
     home_page: ResponseHome_page;
     primary_color: string;
     is_published: boolean;
+    is_no_index: null;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }

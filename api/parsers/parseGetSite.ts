@@ -12,6 +12,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
       updatedAt: response.updated_at,
       color: response.primary_color,
       isPublished: response.is_published,
+      isNoIndex: response.is_no_index,
     },
     homePage: {
       id: response.home_page.id,
