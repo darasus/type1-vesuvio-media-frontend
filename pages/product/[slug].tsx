@@ -1,4 +1,4 @@
-import { getSite } from '../../api/getSite';
+import { getSite } from '../../network/getSite';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { Data } from '../../types/Data';

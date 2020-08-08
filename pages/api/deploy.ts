@@ -1,4 +1,4 @@
-const { deploy } = require('../../api/deploy');
+const { deploy } = require('../../network/deploy');
 
 export default (req, res) => {
   res.statusCode = 200;

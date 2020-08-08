@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { getSite } from '../api/getSite';
+import { getSite } from '../network/getSite';
 import { Data } from '../types/Data';
 import { ArticlePreview } from '../components/ArticlePreview';
 import Head from 'next/head';

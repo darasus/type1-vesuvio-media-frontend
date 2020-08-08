@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import { getSite } from '../api/getSite';
+import { getSite } from '../network/getSite';
 import { Data } from '../types/Data';
 import { ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
