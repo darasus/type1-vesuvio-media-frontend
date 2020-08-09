@@ -4,7 +4,7 @@ import globby from 'globby'
 import prettier from 'prettier'
 
 (async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc');
 
   const pages = await globby(['pages/*.tsx', '!pages/_*.tsx', '!pages/api']);
   const site = await getSite()
@@ -18,7 +18,12 @@ import prettier from 'prettier'
           const path = page.replace('pages', '').replace('.tsx', '');
           const route = path === '/index' ? '' : path;
 
-          return `<url><loc>${`${baseUrl}${route}`}</loc></url>`;
+          return `
+            <url>
+              <loc>${`${baseUrl}${route}`}</loc>
+              ${path === '/index' ? "<changefreq>weekly</changefreq>" : "<changefreq>monthly</changefreq>"}
+              ${path === '/index' ? "<priority>1.0</priority>" : "<priority>0.8</priority>"}
+            </url>`;
         })
         .join('')}
         ${site.articles
@@ -27,8 +32,9 @@ import prettier from 'prettier'
               <url>
                   <loc>${`${baseUrl}/article/${article.slug}`}</loc>
                   <lastmod>${article.updatedAt}</lastmod>
-              </url>
-          `;
+                  <changefreq>monthly</changefreq>
+                  <priority>0.8</priority>
+              </url>`;
           })
           .join('')}
     </urlset>
@@ -36,7 +42,7 @@ import prettier from 'prettier'
 
   // If you're not using Prettier, you can remove this.
   const formatted = prettier.format(sitemap, {
-    ...prettierConfig,
+    // ...prettierConfig,
     parser: 'html',
   });
 

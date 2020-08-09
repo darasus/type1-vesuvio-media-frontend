@@ -21,13 +21,13 @@
     "@vercel/client": "^8.1.0",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
-    "next": "9.4.4",
+    "next": "^9.5.1",
     "next-compose-plugins": "^2.2.0",
     "pino": "^6.5.0",
     "pino-logflare": "^0.3.5",
     "polished": "^3.6.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1"
   },
   "devDependencies": {
