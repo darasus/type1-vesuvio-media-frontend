@@ -2,18 +2,17 @@ import { GetStaticProps } from 'next';
 import { getSite } from '../network/getSite';
 import { Data } from '../types/Data';
 import { ArticlePreview } from '../components/ArticlePreview';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 const About = (props: Data) => {
   return (
     <>
-      <Head>
-        <title>{`Articles | ${props.site.title}`}</title>
-        <meta
-          name="Description"
-          content={`Read our articles for ${props.site.title}`}
-        />
-      </Head>
+      <NextSeo
+        title={`Articles | ${props.site.title}`}
+        description="Articles"
+        noindex={props.site.isNoIndex}
+        nofollow={props.site.isNoIndex}
+      />
       <div>
         {props.articles.map(article => (
           <ArticlePreview
@@ -32,8 +31,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      ...data
-    }
+      ...data,
+    },
   };
 };
 

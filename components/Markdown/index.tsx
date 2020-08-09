@@ -6,6 +6,7 @@ import rehype2react from 'rehype-react';
 import React from 'react';
 import { ArticleImage } from '../ArticleImage';
 import { type } from 'os';
+import clsx from 'clsx';
 
 var processor = unified()
   .use(markdown)
@@ -36,11 +37,12 @@ var processor = unified()
 
 interface Props {
   source: string;
+  className?: string;
 }
 
-export const Markdown: FC<Props> = ({ source }) => {
+export const Markdown: FC<Props> = ({ source, className }) => {
   return (
-    <section className="mb-8 leading-relaxed">
+    <section className={clsx('leading-relaxed', className)}>
       {processor.processSync(source).result}
     </section>
   );

@@ -34,6 +34,8 @@ export const parseGetSite = (response: ResponseSite): Data => {
       .map(article => {
         return {
           id: article.id,
+          seoTitle: article.seo_title,
+          seoDescription: article.seo_description,
           title: article.title,
           slug: article.slug,
           body: article.body,

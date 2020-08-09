@@ -2,8 +2,8 @@ import { getSite } from '../network/getSite';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import { Data } from '../types/Data';
-import Head from 'next/head';
 import { Markdown } from '../components/Markdown';
+import { NextSeo } from 'next-seo';
 
 const Article = (props: Data) => {
   const router = useRouter();
@@ -16,21 +16,35 @@ const Article = (props: Data) => {
 
   return (
     <>
-      <Head>
-        <title>{`${article.title} | ${props.site.title}`}</title>
-        <meta name="Title" content={article.title} />
-        <meta
-          name="Description"
-          content={`${article.body.substr(0, 100)}...`}
-        />
-      </Head>
+      <NextSeo
+        title={article.seoTitle}
+        description={article.seoDescription}
+        noindex={props.site.isNoIndex}
+        nofollow={props.site.isNoIndex}
+        openGraph={{
+          url: `https://${props.site.domainName}/${article.slug}`,
+          title: article.seoTitle,
+          description: article.seoDescription,
+          images: [
+            {
+              url:
+                article.image.large.src ||
+                article.image.medium.src ||
+                article.image.small.src ||
+                article.image.thumbnail.src,
+            },
+          ],
+        }}
+      />
       <div>
-        <div className="flex lg:flex-row flex-col items-center">
-          <div className="overflow-hidden rounded-lg lg:mb-10 mb-5 lg:w-1/2 lg:mr-10">
+        <div className="flex lg:flex-row flex-col items-center mb-5">
+          <div className="overflow-hidden rounded-lg lg:mb-10 lg:w-1/2 lg:mr-10">
             <img src={article.image.large.src} alt={article.image.alt} />
           </div>
           <div className="lg:w-1/2">
-            <h1 className="text-4xl mb-4 font-bold">{article.title}</h1>
+            <h1 className="text-4xl mb-4 font-bold leading-tight">
+              {article.title}
+            </h1>
           </div>
         </div>
         <div className="content mb-8 leading-relaxed">
