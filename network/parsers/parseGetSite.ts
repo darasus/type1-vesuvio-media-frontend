@@ -18,6 +18,8 @@ export const parseGetSite = (response: ResponseSite): Data => {
     homePage: {
       id: response.home_page.id,
       title: response.home_page.title,
+      seoTitle: response.home_page.seo_title,
+      seoDescription: response.home_page.seo_description,
       introductionText: response.home_page.introduction_text,
       mainText: response.home_page.main_text,
       createdAt: response.home_page.created_at,

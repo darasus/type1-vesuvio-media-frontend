@@ -20,8 +20,8 @@ export interface ResponseHome_page {
     created_at: string;
     updated_at: string;
     title: string;
-    seo_title: null;
-    seo_description: null;
+    seo_title: string;
+    seo_description: string;
     intro_image: ResponseIntro_image;
 }
 export interface ResponseIntro_image {
@@ -97,8 +97,8 @@ export interface ResponseArticlesItem {
     site: number;
     created_at: string;
     updated_at: string;
-    seo_title: null;
-    seo_description: null;
+    seo_title: string;
+    seo_description: string;
     is_published: boolean;
     domain_name: null;
     featured_image: ResponseFeatured_image;

@@ -1,3 +1,5 @@
+import { Image } from './Image';
+
 export interface Product {
   id: number;
   slug: string;
@@ -7,28 +9,5 @@ export interface Product {
   updatedAt: string;
   site: number;
   shortDescription: string;
-  image?: {
-    id: number;
-    title: string;
-    large?: {
-      src: string;
-      width: number;
-      height: number;
-    };
-    medium?: {
-      src: string;
-      width: number;
-      height: number;
-    };
-    small?: {
-      src: string;
-      width: number;
-      height: number;
-    };
-    thumbnail?: {
-      src: string;
-      width: number;
-      height: number;
-    };
-  };
+  image?: Image;
 }

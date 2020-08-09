@@ -4,6 +4,7 @@ export const parseImage = (imageResponse: ResponseFeatured_image) => {
   return {
     id: imageResponse.id,
     title: imageResponse.name,
+    alt: imageResponse.alternativeText,
     ...(imageResponse.formats.large && {
       large: {
         src: imageResponse.formats.large.url,

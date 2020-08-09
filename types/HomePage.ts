@@ -8,4 +8,6 @@ export interface HomePage {
   createdAt: string;
   updatedAt: string;
   image: Image;
+  seoTitle: string;
+  seoDescription: string;
 }
