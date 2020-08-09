@@ -1,7 +1,7 @@
-import { getSite } from '../../network/getSite';
+import { getSite } from '../network/getSite';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
-import { Data } from '../../types/Data';
+import { Data } from '../types/Data';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 

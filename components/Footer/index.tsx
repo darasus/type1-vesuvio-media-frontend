@@ -14,7 +14,7 @@ export const Footer = (props: Data) => {
             <nav className="list-none">
               {props.articles?.map(article => (
                 <div key={article.id}>
-                  <Link href={`/article/${article.slug}`}>
+                  <Link href={`/${article.slug}`}>
                     <a
                       className="text-gray-600 hover:text-gray-800"
                       title={article.title}

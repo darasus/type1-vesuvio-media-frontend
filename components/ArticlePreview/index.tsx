@@ -15,7 +15,7 @@ export const ArticlePreview: React.FC<Props> = ({ article, className }) => {
         <span className="inline-block py-1 px-3 rounded bg-primary-200 text-primary-500 text-sm font-medium tracking-widest">
           ARTICLE
         </span>
-        <Link href={`/article/${article.slug}`}>
+        <Link href={`/${article.slug}`}>
           <a
             className="flex flex-col items-start text-primary-500"
             title={article.title}

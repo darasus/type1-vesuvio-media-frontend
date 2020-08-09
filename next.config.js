@@ -4,13 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
-  experimental: {},
   trailingSlash: true,
-  async rewrites() {
-    return [
-      { source: '/article/:path*', destination: '/:path*' }
-    ]
-  },
 };
 
 module.exports = withPlugins([withBundleAnalyzer], nextConfig);

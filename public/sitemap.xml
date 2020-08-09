@@ -13,7 +13,7 @@
 
   <url>
     <loc
-      >https://example.com/article/disney-has-reportedly-paused-its-spending-on-facebook-ads</loc
+      >https://example.com/disney-has-reportedly-paused-its-spending-on-facebook-ads</loc
     >
     <lastmod>2020-08-09T06:09:16.850Z</lastmod>
     <changefreq>monthly</changefreq>
@@ -21,14 +21,14 @@
   </url>
   <url>
     <loc
-      >https://example.com/article/test-arti-kfc-is-working-with-a-russian-3-d-bioprinting-firm-to-try-to-make-lab-produced-chicken-nuggets-cle-2</loc
+      >https://example.com/test-arti-kfc-is-working-with-a-russian-3-d-bioprinting-firm-to-try-to-make-lab-produced-chicken-nuggets-cle-2</loc
     >
     <lastmod>2020-08-08T15:23:29.868Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/article/some-article-title</loc>
+    <loc>https://example.com/some-article-title</loc>
     <lastmod>2020-08-08T15:23:29.868Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

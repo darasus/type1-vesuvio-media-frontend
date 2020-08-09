@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd next dev",
-    "build": "yarn generate:types && yarn generate:sitemap && next build",
+    "build": "yarn generate:types && yarn generate:sitemap:ci && next build",
     "preexport": "yarn build",
     "export": "next export",
     "prestart": "yarn export",
@@ -14,7 +14,8 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
     "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts",
     "generate:types": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-api-types.ts",
-    "generate:sitemap": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts"
+    "generate:sitemap:ci": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts",
+    "generate:sitemap": "env-cmd ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts"
   },
   "dependencies": {
     "@types/prettier": "^2.0.2",

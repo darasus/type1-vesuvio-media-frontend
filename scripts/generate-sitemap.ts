@@ -4,9 +4,8 @@ import globby from 'globby'
 import prettier from 'prettier'
 
 (async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc');
 
-  const pages = await globby(['pages/*.tsx', '!pages/_*.tsx', '!pages/api']);
+  const pages = await globby(['pages/*.tsx', '!pages/_*.tsx','!pages/[*.tsx', '!pages/api']);
   const site = await getSite()
   const baseUrl = `https://${site.site.domainName}`;
 
@@ -30,7 +29,7 @@ import prettier from 'prettier'
           .map(article => {
             return `
               <url>
-                  <loc>${`${baseUrl}/article/${article.slug}`}</loc>
+                  <loc>${`${baseUrl}/${article.slug}`}</loc>
                   <lastmod>${article.updatedAt}</lastmod>
                   <changefreq>monthly</changefreq>
                   <priority>0.8</priority>
@@ -40,9 +39,7 @@ import prettier from 'prettier'
     </urlset>
   `;
 
-  // If you're not using Prettier, you can remove this.
   const formatted = prettier.format(sitemap, {
-    // ...prettierConfig,
     parser: 'html',
   });
 
