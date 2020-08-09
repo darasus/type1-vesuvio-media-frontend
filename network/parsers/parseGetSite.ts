@@ -36,6 +36,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
           slug: article.slug,
           body: article.body,
           createdAt: article.created_at,
+          updatedAt: article.updated_at,
           image: article.featured_image
             ? parseImage(article.featured_image)
             : null,

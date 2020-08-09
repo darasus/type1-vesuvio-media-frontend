@@ -1,9 +1,10 @@
-const { createDeployment } = require('@vercel/client');
+import { createDeployment } from '@vercel/client';
+
 const path = require('path');
 
 const outputFolder = path.resolve(process.cwd());
 
-async function deploy({ projectName, siteId }) {
+export const deploy = async ({ projectName, siteId }: { projectName: string, siteId: number }) => {
   let deployment;
 
   for await (const event of createDeployment(
@@ -24,11 +25,9 @@ async function deploy({ projectName, siteId }) {
       },
       target: 'production',
       projectSettings: {
-        rootDirectory: null,
         devCommand: null,
         buildCommand: null,
         outputDirectory: null,
-        framework: null,
       },
     }
   )) {
@@ -47,5 +46,3 @@ async function deploy({ projectName, siteId }) {
 
   return deployment;
 }
-
-module.exports = { deploy };

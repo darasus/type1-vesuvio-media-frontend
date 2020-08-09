@@ -1,14 +1,13 @@
-const { deploy } = require('./network/deploy');
-const { API_BASE } = require('./constants');
-
-const fetch = require('isomorphic-fetch');
-
+import fetch from 'isomorphic-fetch';
+import { deploy } from '../network/deploy';
+import { API_BASE } from '../constants';
+import { Site } from '../types/Site';
 
 async function main() {
   const response = await fetch(`${API_BASE}/sites`);
   const sites = await (await response).json();
 
-  sites.forEach(async site => {
+  sites.forEach(async (site: Site) => {
     await deploy({ projectName: `site-id-${site.id}`, siteId: site.id });
   });
 }

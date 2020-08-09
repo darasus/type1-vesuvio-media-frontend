@@ -1,8 +1,8 @@
-const fetch = require('isomorphic-fetch');
-const { json2ts } = require('json-ts');
-const fs = require('fs');
-const path = require('path');
-const { API_BASE } = require('../constants')
+import fetch from  'isomorphic-fetch'
+import { json2ts } from  'json-ts'
+import fs from  'fs'
+import path from  'path'
+import { API_BASE } from  '../constants'
 
 const generateApiTypes = async () => {
   const response = await fetch(`${API_BASE}/sites/2`);

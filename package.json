@@ -4,18 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd next dev",
-    "build": "yarn generate && next build",
+    "build": "yarn generate:types && yarn generate:sitemap && next build",
     "preexport": "yarn build",
     "export": "next export",
     "prestart": "yarn export",
     "start": "serve out",
-    "generate": "cross-env node utils/generateApiTypes.js",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "deploy:all": "env-cmd node deployAll.js"
+    "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts",
+    "generate:types": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-api-types.ts",
+    "generate:sitemap": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts"
   },
   "dependencies": {
+    "@types/prettier": "^2.0.2",
     "@vercel/client": "^8.1.0",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
@@ -31,6 +33,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@next/bundle-analyzer": "^9.4.4",
+    "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^14.0.9",
     "@types/react": "^16.9.35",
     "@vercel/build-utils": "^2.4.0",
@@ -46,6 +49,7 @@
     "prettier": "^2.0.5",
     "serve": "^11.3.2",
     "tailwindcss": "^1.4.6",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }
 }

@@ -6,5 +6,6 @@ export interface Article {
   slug: string | null;
   body: string | null;
   createdAt: string | null;
+  updatedAt: string | null;
   image: Image | null;
 }
