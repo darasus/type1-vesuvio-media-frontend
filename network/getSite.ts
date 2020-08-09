@@ -1,8 +1,9 @@
 import { parseGetSite } from './parsers/parseGetSite';
+import { API_BASE } from '../constants';
 
 export const getSite = async () => {
   const response = await fetch(
-    `${process.env.API_BASE}/sites/${process.env.SITE_ID}`
+    `${API_BASE}/sites/${process.env.SITE_ID}`
   );
 
   const data = await response.json();

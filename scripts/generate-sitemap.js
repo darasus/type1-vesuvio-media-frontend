@@ -1,13 +1,14 @@
 const fs = require('fs');
 const globby = require('globby');
 const prettier = require('prettier');
+const {API_BASE} = require('../constants')
 
 (async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
 
   const pages = await globby(['pages/*.tsx', '!pages/_*.tsx', '!pages/api']);
   const response = await fetch(
-    `${process.env.API_BASE}/sites/${process.env.SITE_ID}`
+    `${API_BASE}/sites/${process.env.SITE_ID}`
   );
   const data = await response.json();
   const baseUrl = `https://${data.domain_name}`;

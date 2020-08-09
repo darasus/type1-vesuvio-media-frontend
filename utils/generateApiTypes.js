@@ -2,10 +2,10 @@ const fetch = require('isomorphic-fetch');
 const { json2ts } = require('json-ts');
 const fs = require('fs');
 const path = require('path');
+const { API_BASE } = require('../constants')
 
 const generateApiTypes = async () => {
-  console.log(process.env.API_BASE);
-  const response = await fetch(`${process.env.API_BASE}/sites/2`);
+  const response = await fetch(`${API_BASE}/sites/2`);
   const data = await response.json();
 
   fs.writeFile(

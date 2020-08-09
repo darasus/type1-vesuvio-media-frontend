@@ -1,11 +1,11 @@
 const { deploy } = require('./network/deploy');
+const { API_BASE } = require('./constants');
 
 const fetch = require('isomorphic-fetch');
 
-console.log(process.env.API_BASE)
 
 async function main() {
-  const response = await fetch(`${process.env.API_BASE}/sites`);
+  const response = await fetch(`${API_BASE}/sites`);
   const sites = await (await response).json();
 
   sites.forEach(async site => {
