@@ -15,13 +15,16 @@
     "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts",
     "generate:types": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-api-types.ts",
     "generate:sitemap:ci": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts",
-    "generate:sitemap": "env-cmd ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts"
+    "generate:sitemap": "env-cmd ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts",
+    "generate:images": "ts-node --project tsconfig.scripts.json scripts/generate-images.ts"
   },
   "dependencies": {
     "@types/prettier": "^2.0.2",
     "@vercel/client": "^8.1.0",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
     "next": "^9.5.1",
     "next-compose-plugins": "^2.2.0",
     "next-seo": "^4.7.3",
@@ -33,6 +36,7 @@
     "rehype-react": "^6.1.0",
     "remark-parse": "^8.0.3",
     "remark-rehype": "^7.0.0",
+    "text2png": "^2.3.0",
     "unified": "^9.1.0"
   },
   "devDependencies": {

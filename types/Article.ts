@@ -5,6 +5,7 @@ export interface Article {
   title: string | null;
   seoTitle: string | null;
   seoDescription: string | null;
+  excerpt: string | null;
   slug: string | null;
   body: string | null;
   createdAt: string | null;

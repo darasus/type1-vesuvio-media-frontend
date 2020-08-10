@@ -28,12 +28,12 @@ export const ProductPreview: React.FC<Props> = ({ product, className }) => {
           />
         )}
         <div className="lg:w-3/4 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 className="text-sm title-font text-gray-500 tracking-widest">
+          <span className="text-sm title-font text-gray-500 tracking-widest">
             BRAND NAME
-          </h2>
-          <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+          </span>
+          <h3 className="text-gray-900 text-3xl title-font font-medium mb-1">
             {product.title}
-          </h1>
+          </h3>
           <div className="flex mb-4">
             <span className="flex items-center">
               <svg

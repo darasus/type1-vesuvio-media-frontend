@@ -25,11 +25,24 @@ var processor = unified()
             return <br key={i} />;
           }
 
+          if (typeof item === 'object' && item.type === 'a') {
+            console.log(item.props);
+            return (
+              <a
+                key={i}
+                {...item.props}
+                {...(item.props.href.substr(0, 1) === '/'
+                  ? {}
+                  : { rel: 'nofollow' })}
+              />
+            );
+          }
+
           if (item.length === 1 && typeof item === 'string') {
             return null;
           }
 
-          return <p key={i}>{item}</p>;
+          return item;
         });
       },
     },

@@ -9,6 +9,8 @@ export interface ResponseSite {
     is_published: boolean;
     is_no_index: boolean;
     domain_name: string;
+    created_by: null;
+    updated_by: null;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -22,6 +24,8 @@ export interface ResponseHome_page {
     title: string;
     seo_title: string;
     seo_description: string;
+    created_by: null;
+    updated_by: null;
     intro_image: ResponseIntro_image;
 }
 export interface ResponseIntro_image {
@@ -42,6 +46,8 @@ export interface ResponseIntro_image {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
+    created_by: null;
+    updated_by: null;
 }
 export interface ResponseFormats {
     large?: ResponseLarge;
@@ -101,6 +107,9 @@ export interface ResponseArticlesItem {
     seo_description: string;
     is_published: boolean;
     domain_name: null;
+    created_by: null;
+    updated_by: null;
+    excerpt: string;
     featured_image: ResponseFeatured_image;
 }
 export interface ResponseFeatured_image {
@@ -121,6 +130,8 @@ export interface ResponseFeatured_image {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
+    created_by: null;
+    updated_by: null;
 }
 export interface ResponseProductsItem {
     id: number;
@@ -132,6 +143,8 @@ export interface ResponseProductsItem {
     updated_at: string;
     Description: string | null;
     short_description: string;
+    created_by: null;
+    updated_by: null;
     Image: ResponseImage;
 }
 export interface ResponseImage {
@@ -152,4 +165,6 @@ export interface ResponseImage {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
+    created_by: null;
+    updated_by: null;
 }

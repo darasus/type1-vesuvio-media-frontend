@@ -4,6 +4,9 @@ import { GetStaticProps } from 'next';
 import { Data } from '../types/Data';
 import { Markdown } from '../components/Markdown';
 import { NextSeo } from 'next-seo';
+import { Title } from '../components/Title';
+import { ProductPreview } from '../components/ProductPreview';
+import { ArticlePreview } from '../components/ArticlePreview';
 
 const Article = (props: Data) => {
   const router = useRouter();
@@ -36,12 +39,12 @@ const Article = (props: Data) => {
           ],
         }}
       />
-      <div>
-        <div className="flex lg:flex-row flex-col items-center mb-5">
-          <div className="overflow-hidden rounded-lg lg:mb-10 lg:w-1/2 lg:mr-10">
+      <section className="mb-20">
+        <div className="flex md:flex-row flex-col items-center mb-5">
+          <div className="overflow-hidden rounded-lg md:mb-10 md:w-1/2 md:mr-10 mb-5">
             <img src={article.image.large.src} alt={article.image.alt} />
           </div>
-          <div className="lg:w-1/2">
+          <div className="md:w-1/2">
             <h1 className="text-4xl mb-4 font-bold leading-tight">
               {article.title}
             </h1>
@@ -50,7 +53,27 @@ const Article = (props: Data) => {
         <div className="content mb-8 leading-relaxed">
           <Markdown source={article.body} />
         </div>
-      </div>
+      </section>
+      <section className="mb-20">
+        <Title title="Products" className="mb-20" />
+        {props.products.map(product => (
+          <ProductPreview
+            key={product.id}
+            product={product}
+            className="mb-10"
+          />
+        ))}
+      </section>
+      <section>
+        <Title title="Latest articles" className="mb-20" />
+        {props.articles.map(article => (
+          <ArticlePreview
+            key={article.id}
+            article={article}
+            className="mb-10"
+          />
+        ))}
+      </section>
     </>
   );
 };

@@ -23,7 +23,7 @@ export const ArticlePreview: React.FC<Props> = ({ article, className }) => {
             <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
               {article.title}
             </h2>
-            <p className="leading-relaxed mb-8 text-gray-600">{`${article.body.substr(
+            <p className="leading-relaxed mb-8 text-gray-600">{`${article.excerpt.substr(
               0,
               600
             )}...`}</p>
