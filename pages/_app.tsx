@@ -12,6 +12,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <link rel="shortcut icon" href="/static/images/favicon.png" />
         <title>{`Home | ${pageProps?.site?.title}`}</title>
         {pageProps?.primaryColor && (
           <style>

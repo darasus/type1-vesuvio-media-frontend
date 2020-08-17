@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { useState } from 'react';
+import React from 'react';
 import { Data } from '../../types/Data';
 
 const Links = () => {
@@ -43,7 +43,7 @@ const Links = () => {
 };
 
 export const Header: React.FC<Data> = props => {
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = React.useState(null);
 
   return (
     <div>
@@ -51,8 +51,8 @@ export const Header: React.FC<Data> = props => {
         <div className="container mx-auto flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex-1 text-primary-500">
             <Link href="/">
-              <a className="text-lg font-bold uppercase">
-                {props?.site?.title}
+              <a>
+                <img className="h-8" src="/static/images/logo.png" alt="logo" />
               </a>
             </Link>
           </div>

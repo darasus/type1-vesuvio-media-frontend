@@ -1,17 +1,27 @@
-import fetch from 'isomorphic-fetch';
-import { json2ts } from 'json-ts';
-import fs from 'fs';
-import path from 'path';
-import { API_BASE } from '../constants';
-import http from 'http';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as appRoot from 'app-root-path';
+import { getSite } from '../network/getSite';
+const text2png = require('text2png');
 
 const generateImages = async () => {
-  var file = fs.createWriteStream(`${path.resolve()}/generated/logo.png`);
-  await http.get('http://localhost:3000/api/image?title=hiiii', function (
-    response
-  ) {
-    response.pipe(file);
-  });
+  const site = await getSite();
+  const pathToPublicLogo = path.join(appRoot + '/static/images/logo.png');
+  const pathToPublicFavicon = path.join(appRoot + '/static/images/favicon.png');
+  const title = site.site.title;
+  const color = site.site.color;
+  const font = '80px Futura';
+  const options = {
+    color,
+    font,
+    localFontPath: path.join(
+      appRoot + '/static/fonts/futura/FuturaStdBook.otf'
+    ),
+    localFontName: 'Futura',
+  };
+
+  fs.writeFileSync(pathToPublicLogo, text2png(title, options));
+  fs.writeFileSync(pathToPublicFavicon, text2png(title.substr(0, 1), options));
 };
 
 generateImages();

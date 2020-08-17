@@ -26,7 +26,6 @@ var processor = unified()
           }
 
           if (typeof item === 'object' && item.type === 'a') {
-            console.log(item.props);
             return (
               <a
                 key={i}
