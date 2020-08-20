@@ -20,10 +20,12 @@
     "generate:images:ci": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-images.ts"
   },
   "dependencies": {
+    "@google-cloud/storage": "^5.2.0",
     "@types/prettier": "^2.0.2",
     "@vercel/client": "^8.1.0",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
+    "date-fns": "^2.15.0",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
     "next": "^9.5.2",
