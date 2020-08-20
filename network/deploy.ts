@@ -4,7 +4,13 @@ const path = require('path');
 
 const outputFolder = path.resolve(process.cwd());
 
-export const deploy = async ({ projectName, siteId }: { projectName: string, siteId: number }) => {
+export const deploy = async ({
+  projectName,
+  siteId,
+}: {
+  projectName: string;
+  siteId: number;
+}) => {
   let deployment;
 
   for await (const event of createDeployment(
@@ -24,11 +30,6 @@ export const deploy = async ({ projectName, siteId }: { projectName: string, sit
         },
       },
       target: 'production',
-      projectSettings: {
-        devCommand: null,
-        buildCommand: null,
-        outputDirectory: null,
-      },
     }
   )) {
     if (event.type === 'error') {
@@ -45,4 +46,4 @@ export const deploy = async ({ projectName, siteId }: { projectName: string, sit
   }
 
   return deployment;
-}
+};

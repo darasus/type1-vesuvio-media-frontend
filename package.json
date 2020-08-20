@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd next dev",
-    "build": "yarn generate:images:ci && yarn generate:types && yarn generate:sitemap:ci && next build",
+    "build": "next build",
     "preexport": "yarn build",
     "export": "next export",
     "prestart": "yarn export",
@@ -12,12 +12,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts",
-    "generate:types": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-api-types.ts",
-    "generate:sitemap:ci": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts",
-    "generate:sitemap": "env-cmd ts-node --project tsconfig.scripts.json scripts/generate-sitemap.ts",
-    "generate:images": "env-cmd ts-node --project tsconfig.scripts.json scripts/generate-images.ts",
-    "generate:images:ci": "cross-env ts-node --project tsconfig.scripts.json scripts/generate-images.ts"
+    "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts"
   },
   "dependencies": {
     "@google-cloud/storage": "^5.2.0",
