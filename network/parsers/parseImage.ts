@@ -1,4 +1,5 @@
 import { ResponseFeatured_image } from '../../generated/types';
+import { replaceAllImageURLs } from '../../utils/replaceAllImageURLs';
 
 export const parseImage = (imageResponse: ResponseFeatured_image) => {
   return {
@@ -7,28 +8,28 @@ export const parseImage = (imageResponse: ResponseFeatured_image) => {
     alt: imageResponse.alternativeText,
     ...(imageResponse.formats.large && {
       large: {
-        src: imageResponse.formats.large.url,
+        src: replaceAllImageURLs(imageResponse.formats.large.url),
         width: imageResponse.formats.large.width,
         height: imageResponse.formats.large.height,
       },
     }),
     ...(imageResponse.formats.medium && {
       medium: {
-        src: imageResponse.formats.medium.url,
+        src: replaceAllImageURLs(imageResponse.formats.medium.url),
         width: imageResponse.formats.medium.width,
         height: imageResponse.formats.medium.height,
       },
     }),
     ...(imageResponse.formats.small && {
       small: {
-        src: imageResponse.formats.small.url,
+        src: replaceAllImageURLs(imageResponse.formats.small.url),
         width: imageResponse.formats.small.width,
         height: imageResponse.formats.small.height,
       },
     }),
     ...(imageResponse.formats.thumbnail && {
       thumbnail: {
-        src: imageResponse.formats.thumbnail.url,
+        src: replaceAllImageURLs(imageResponse.formats.thumbnail.url),
         width: imageResponse.formats.thumbnail.width,
         height: imageResponse.formats.thumbnail.height,
       },

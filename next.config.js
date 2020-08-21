@@ -6,13 +6,11 @@ const { generateApiTypes } = require('./scripts/generate-api-types');
 const { generateSitemap } = require('./scripts/generate-sitemap');
 const { generateImages } = require('./scripts/generate-images');
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
   trailingSlash: true,
-  assetPrefix: isProd ? 'https://vesuvio-media.b-cdn.net' : '',
   env: {
     API_BASE: 'https://type1.vesuviomedia.com',
+    CDN_URL: 'vesuvio-media.b-cdn.net',
   },
 };
 

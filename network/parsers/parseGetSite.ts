@@ -1,6 +1,7 @@
 import { ResponseSite } from '../../generated/types';
 import { Data } from '../../types/Data';
 import { parseImage } from './parseImage';
+import { replaceAllImageURLs } from '../../utils/replaceAllImageURLs';
 
 export const parseGetSite = (response: ResponseSite): Data => {
   return {
@@ -20,8 +21,10 @@ export const parseGetSite = (response: ResponseSite): Data => {
       title: response.home_page.title,
       seoTitle: response.home_page.seo_title,
       seoDescription: response.home_page.seo_description,
-      introductionText: response.home_page.introduction_text,
-      mainText: response.home_page.main_text,
+      introductionText: replaceAllImageURLs(
+        response.home_page.introduction_text
+      ),
+      mainText: replaceAllImageURLs(response.home_page.main_text),
       createdAt: response.home_page.created_at,
       updatedAt: response.home_page.updated_at,
       image: response.home_page.intro_image
@@ -38,7 +41,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
           seoDescription: article.seo_description,
           title: article.title,
           slug: article.slug,
-          body: article.body,
+          body: replaceAllImageURLs(article.body, { size: 500 }),
           createdAt: article.created_at,
           updatedAt: article.updated_at,
           excerpt: article.excerpt,
@@ -58,6 +61,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
         site: item.site,
         shortDescription: item.short_description,
         image: item.Image ? parseImage(item.Image) : null,
+        brand: item.brand_name,
       };
     }),
   };

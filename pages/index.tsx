@@ -43,6 +43,7 @@ const Home = (props: Data) => {
             key={product.id}
             product={product}
             className="mb-10"
+            data={props}
           />
         ))}
       </section>

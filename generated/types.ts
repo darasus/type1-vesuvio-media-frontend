@@ -145,6 +145,7 @@ export interface ResponseProductsItem {
     short_description: string;
     created_by: null;
     updated_by: null;
+    brand_name: string;
     Image: ResponseImage;
 }
 export interface ResponseImage {

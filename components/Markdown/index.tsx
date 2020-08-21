@@ -5,7 +5,6 @@ import remark2rehype from 'remark-rehype';
 import rehype2react from 'rehype-react';
 import React from 'react';
 import { ArticleImage } from '../ArticleImage';
-import { type } from 'os';
 import clsx from 'clsx';
 
 var processor = unified()

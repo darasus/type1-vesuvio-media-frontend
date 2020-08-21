@@ -10,4 +10,5 @@ export interface Product {
   site: number;
   shortDescription: string;
   image?: Image;
+  brand: string;
 }

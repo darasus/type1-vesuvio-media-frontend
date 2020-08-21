@@ -58,6 +58,7 @@ const Article = (props: Data) => {
         <Title title="Products" className="mb-20" />
         {props.products.map(product => (
           <ProductPreview
+            data={props}
             key={product.id}
             product={product}
             className="mb-10"
