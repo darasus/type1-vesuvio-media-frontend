@@ -108,7 +108,7 @@ export interface ResponseArticlesItem {
     is_published: boolean;
     domain_name: null;
     created_by: null;
-    updated_by: null;
+    updated_by: null | number;
     excerpt: string;
     featured_image: ResponseFeatured_image;
 }

@@ -5,7 +5,7 @@ export const Footer = (props: Data) => {
   return (
     <footer className="text-gray-700 bg-gray-100">
       <div className="container px-5 py-16 mx-auto">
-        <div className="flex flex-wrap md:text-left text-center order-first">
+        <div className="flex flex-wrap text-left order-first">
           {/* <div className="lg:w-3/4 md:w-1/2 w-full px-4"> */}
           <div className="w-full px-4">
             <span className="inline-block py-1 px-2 rounded bg-gray-200 text-gray-700 text-xs font-medium tracking-widest mb-3">

@@ -2,6 +2,7 @@ import { ResponseSite } from '../../generated/types';
 import { Data } from '../../types/Data';
 import { parseImage } from './parseImage';
 import { replaceAllImageURLs } from '../../utils/replaceAllImageURLs';
+import { parseISO, compareDesc } from 'date-fns';
 
 export const parseGetSite = (response: ResponseSite): Data => {
   return {
@@ -34,35 +35,34 @@ export const parseGetSite = (response: ResponseSite): Data => {
     primaryColor: response.primary_color,
     articles: response.articles
       .filter(article => article.is_published)
-      .map(article => {
-        return {
-          id: article.id,
-          seoTitle: article.seo_title,
-          seoDescription: article.seo_description,
-          title: article.title,
-          slug: article.slug,
-          body: replaceAllImageURLs(article.body, { size: 500 }),
-          createdAt: article.created_at,
-          updatedAt: article.updated_at,
-          excerpt: article.excerpt,
-          image: article.featured_image
-            ? parseImage(article.featured_image)
-            : null,
-        };
-      }),
-    products: response.products.map(item => {
-      return {
-        id: item.id,
-        slug: item.slug,
-        title: item.title,
-        url: item.url,
-        createdAt: item.created_at,
-        updatedAt: item.updated_at,
-        site: item.site,
-        shortDescription: item.short_description,
-        image: item.Image ? parseImage(item.Image) : null,
-        brand: item.brand_name,
-      };
-    }),
+      .sort((a, b) =>
+        compareDesc(parseISO(a.created_at), parseISO(b.created_at))
+      )
+      .map(article => ({
+        id: article.id,
+        seoTitle: article.seo_title,
+        seoDescription: article.seo_description,
+        title: article.title,
+        slug: article.slug,
+        body: replaceAllImageURLs(article.body, { size: 500 }),
+        createdAt: article.created_at,
+        updatedAt: article.updated_at,
+        excerpt: article.excerpt,
+        image: article.featured_image
+          ? parseImage(article.featured_image)
+          : null,
+      })),
+    products: response.products.map(item => ({
+      id: item.id,
+      slug: item.slug,
+      title: item.title,
+      url: item.url,
+      createdAt: item.created_at,
+      updatedAt: item.updated_at,
+      site: item.site,
+      shortDescription: item.short_description,
+      image: item.Image ? parseImage(item.Image) : null,
+      brand: item.brand_name,
+    })),
   };
 };

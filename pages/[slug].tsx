@@ -41,10 +41,15 @@ const Article = (props: Data) => {
       />
       <section className="mb-20">
         <div className="flex md:flex-row flex-col items-center mb-5">
-          <div className="overflow-hidden rounded-lg md:mb-10 md:w-1/2 md:mr-10 mb-5">
-            <img src={article.image.large.src} alt={article.image.alt} />
+          <div className="overflow-hidden rounded-lg md:mr-10">
+            <img
+              className=""
+              style={{ maxHeight: 400 }}
+              src={article.image.large.src}
+              alt={article.image.alt}
+            />
           </div>
-          <div className="md:w-1/2">
+          <div className="">
             <h1 className="text-4xl mb-4 font-bold leading-tight">
               {article.title}
             </h1>
@@ -55,7 +60,7 @@ const Article = (props: Data) => {
         </div>
       </section>
       <section className="mb-20">
-        <Title title="Products" className="mb-20" />
+        <Title title="You might be interested in" className="mb-20" />
         {props.products.map(product => (
           <ProductPreview
             data={props}

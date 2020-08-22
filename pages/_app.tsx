@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }) => {
         )}
       </Head>
       <Header {...pageProps} />
-      <div className="container mx-auto py-5">
+      <div className="container mx-auto py-5 px-5">
         <Component {...pageProps} />
       </div>
       <Footer {...pageProps} />
