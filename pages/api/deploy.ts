@@ -1,53 +1,22 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { logflarePinoVercel } from 'pino-logflare';
-import pino from 'pino';
 
-const { deploy } = require('../../network/deploy');
-
-const { stream, send } = logflarePinoVercel({
-  apiKey: 'DQSylIzBZjKa',
-  sourceToken: 'af83e80c-6461-48d8-a5c6-a5ecb8a15822',
-});
-
-const logger = pino(
-  {
-    browser: {
-      transmit: {
-        level: 'info',
-        send: send,
-      },
-    },
-    level: 'debug',
-    base: {
-      env: process.env.ENV || 'ENV not set',
-      revision: process.env.VERCEL_GITHUB_COMMIT_SHA,
-    },
-  },
-  stream
-);
+const fetch = require('isomorphic-fetch');
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
-  let siteId = null;
+  await fetch(
+    'https://api.github.com/repos/vesuvio-media/type1-vesuvio-media-frontend/dispatches',
+    {
+      headers: {
+        Authorization: 'token 4b670d7f97d51927253e0d6d1737e8b8807e5760',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({ event_type: 'webhook-one' }),
+    }
+  );
 
-  logger.info(JSON.stringify(req.body));
-
-  if (req.body?.entry?.site?.id) {
-    siteId = req.body?.entry?.site?.id;
-  }
-
-  if (req.body?.entry?.home_page?.site) {
-    siteId = req.body?.entry?.home_page?.site;
-  }
-
-  if (siteId) {
-    await deploy({ projectName: `site-id-${siteId}`, siteId: siteId });
-    logger.info('✅ Deployment initiated...');
-    res.end('✅ Deployment initiated...');
-  } else {
-    logger.info('❌ Error deploying...');
-    res.end('❌ Error deploying...');
-  }
+  res.end('✅ Deployment initiated...');
 };

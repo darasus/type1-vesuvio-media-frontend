@@ -45,7 +45,15 @@
   </url>
   <url>
     <loc>https://example.com/back-pain-pregnancy-causes-and-helpful-tips</loc>
-    <lastmod>2020-08-22T18:15:44.010Z</lastmod>
+    <lastmod>2020-08-23T21:51:15.886Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://example.com/tending-to-neck-and-back-pain-causes-preventive-measures-and-remedies</loc
+    >
+    <lastmod>2020-08-22T18:51:24.831Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

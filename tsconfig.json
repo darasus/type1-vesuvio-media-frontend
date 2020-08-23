@@ -24,6 +24,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "constants.ts", "scripts/generateApiTypes.js"
+    "**/*.tsx", "constants.js", "scripts/generateApiTypes.js", "network/deploy.js", "scripts/deploy-all-sites.js", "logger.js"
   ]
 }

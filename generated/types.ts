@@ -64,6 +64,7 @@ export interface ResponseLarge {
     size: number;
     width: number;
     height: number;
+    name?: string;
 }
 export interface ResponseSmall {
     ext: string;
@@ -74,6 +75,7 @@ export interface ResponseSmall {
     size: number;
     width: number;
     height: number;
+    name?: string;
 }
 export interface ResponseMedium {
     ext: string;
@@ -84,6 +86,7 @@ export interface ResponseMedium {
     size: number;
     width: number;
     height: number;
+    name?: string;
 }
 export interface ResponseThumbnail {
     ext: string;
@@ -94,6 +97,7 @@ export interface ResponseThumbnail {
     size: number;
     width: number;
     height: number;
+    name?: string;
 }
 export interface ResponseArticlesItem {
     id: number;
@@ -107,7 +111,7 @@ export interface ResponseArticlesItem {
     seo_description: string;
     is_published: boolean;
     domain_name: null;
-    created_by: null;
+    created_by: null | number;
     updated_by: null | number;
     excerpt: string;
     featured_image: ResponseFeatured_image;
@@ -130,8 +134,8 @@ export interface ResponseFeatured_image {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
-    created_by: null;
-    updated_by: null;
+    created_by: null | number;
+    updated_by: null | number;
 }
 export interface ResponseProductsItem {
     id: number;
@@ -144,7 +148,7 @@ export interface ResponseProductsItem {
     Description: string | null;
     short_description: string;
     created_by: null;
-    updated_by: null;
+    updated_by: null | number;
     brand_name: string;
     Image: ResponseImage;
 }

@@ -12,12 +12,13 @@
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "deploy:all": "ts-node --project tsconfig.scripts.json scripts/deploy-all-sites.ts"
+    "deploy:all": "node scripts/deploy-all-sites.js"
   },
   "dependencies": {
     "@google-cloud/storage": "^5.2.0",
+    "@octokit/core": "^3.1.2",
     "@types/prettier": "^2.0.2",
-    "@vercel/client": "^8.1.0",
+    "@vercel/client": "^8.2.1",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
     "date-fns": "^2.15.0",
@@ -26,8 +27,6 @@
     "next": "^9.5.2",
     "next-compose-plugins": "^2.2.0",
     "next-seo": "^4.7.3",
-    "pino": "^6.5.0",
-    "pino-logflare": "^0.3.5",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -58,7 +57,6 @@
     "prettier": "^2.0.5",
     "serve": "^11.3.2",
     "tailwindcss": "^1.4.6",
-    "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }
 }

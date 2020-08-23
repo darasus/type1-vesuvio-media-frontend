@@ -1,22 +1,13 @@
-import { createDeployment } from '@vercel/client';
-
+const { createDeployment } = require('@vercel/client');
 const path = require('path');
 
-const outputFolder = path.resolve(process.cwd());
-
-export const deploy = async ({
-  projectName,
-  siteId,
-}: {
-  projectName: string;
-  siteId: number;
-}) => {
+const deploy = async ({ projectName, siteId }) => {
   let deployment;
 
   for await (const event of createDeployment(
     {
       token: 'qy5l9zSArirn6f1214G3xADi',
-      path: outputFolder,
+      path: path.resolve(process.cwd()),
       teamId: 'vesuvio-media',
     },
     {
@@ -33,7 +24,7 @@ export const deploy = async ({
     }
   )) {
     if (event.type === 'error') {
-      console.error(event);
+      console.log(event);
     }
     if (event.type === 'building') {
       console.log(`🛠 Building ${projectName}...`);
@@ -47,3 +38,5 @@ export const deploy = async ({
 
   return deployment;
 };
+
+module.exports = { deploy };
