@@ -9,6 +9,7 @@ const deploy = async ({ projectName, siteId }) => {
       token: 'qy5l9zSArirn6f1214G3xADi',
       path: path.resolve(process.cwd()),
       teamId: 'vesuvio-media',
+      force: true,
     },
     {
       name: projectName,
