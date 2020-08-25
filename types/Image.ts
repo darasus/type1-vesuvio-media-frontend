@@ -8,8 +8,7 @@ export interface Image {
   id: number;
   title: string;
   alt: string;
-  large: ImageSet;
-  medium: ImageSet;
-  small: ImageSet;
-  thumbnail: ImageSet;
+  src: string;
+  height: number;
+  width: number;
 }

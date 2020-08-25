@@ -12,7 +12,7 @@ export const replaceAllImageURLs = (
   options?: { size: 'small' | 'medium' | 'large' | number }
 ) => {
   const urlBaseRegExp = /storage.googleapis.com/gi;
-  const imageTypeRegExp = /(.jpeg|.jpg|.png)/gi;
+  const imageTypeRegExp = /(.jpeg|.jpg|.png)+$/gi;
 
   return string
     .replace(urlBaseRegExp, process.env.CDN_URL)

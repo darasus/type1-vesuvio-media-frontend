@@ -28,27 +28,29 @@ const Article = (props: Data) => {
           url: `https://${props.site.domainName}/${article.slug}`,
           title: article.seoTitle,
           description: article.seoDescription,
-          images: [
-            {
-              url:
-                article.image.large.src ||
-                article.image.medium.src ||
-                article.image.small.src ||
-                article.image.thumbnail.src,
-            },
-          ],
+          ...(article.image?.src
+            ? {
+                images: [
+                  {
+                    url: article.image.src,
+                  },
+                ],
+              }
+            : {}),
         }}
       />
       <section className="mb-20">
         <div className="flex md:flex-row flex-col items-center mb-5">
-          <div className="overflow-hidden rounded-lg md:mr-10">
-            <img
-              className=""
-              style={{ maxHeight: 400 }}
-              src={article.image.large.src}
-              alt={article.image.alt}
-            />
-          </div>
+          {article.image?.src && (
+            <div className="overflow-hidden rounded-lg md:mr-10">
+              <img
+                className=""
+                style={{ maxHeight: 400 }}
+                src={article.image.src}
+                alt={article.image.alt}
+              />
+            </div>
+          )}
           <div className="">
             <h1 className="text-4xl mb-4 font-bold leading-tight">
               {article.title}

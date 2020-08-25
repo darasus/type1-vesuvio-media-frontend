@@ -28,9 +28,9 @@ const Home = (props: Data) => {
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             {props.homePage.image && (
               <img
-                src={props.homePage.image.small.src}
-                height={props.homePage.image.small.height}
-                width={props.homePage.image.small.width}
+                src={props.homePage.image.src}
+                height={props.homePage.image.height}
+                width={props.homePage.image.width}
               />
             )}
           </div>

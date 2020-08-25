@@ -22,14 +22,12 @@ export const ProductPreview: React.FC<Props> = ({
       )}
     >
       <div className="mx-auto flex flex-wrap">
-        {(product.image?.medium?.src || product.image?.small?.src) && (
+        {product.image?.src && (
           <img
             className="lg:w-1/4 w-full lg:h-auto h-64 object-cover object-center rounded"
-            src={product.image?.medium?.src || product.image?.small?.src}
-            width={product.image?.medium?.width || product.image?.small?.width}
-            height={
-              product.image?.medium?.height || product.image?.small?.height
-            }
+            src={product.image?.src}
+            width={product.image?.width}
+            height={product.image?.height}
             alt={product.title}
           />
         )}

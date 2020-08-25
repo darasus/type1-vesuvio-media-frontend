@@ -114,7 +114,7 @@ export interface ResponseArticlesItem {
     created_by: null | number;
     updated_by: null | number;
     excerpt: string;
-    featured_image: ResponseFeatured_image;
+    featured_image: ResponseFeatured_image | null;
 }
 export interface ResponseFeatured_image {
     id: number;

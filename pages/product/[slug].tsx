@@ -15,7 +15,7 @@ const Product = (props: Data) => {
   return (
     <div>
       <div>
-        <img src={product.image?.small?.src} />
+        <img src={product.image?.src} />
       </div>
       <div>{product.title}</div>
       <div>{product.shortDescription}</div>
