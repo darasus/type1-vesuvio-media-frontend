@@ -74,7 +74,7 @@ const Article = (props: Data) => {
       </section>
       <section>
         <Title title="Latest articles" className="mb-20" />
-        {props.articles.map(article => (
+        {props.articles.slice(0, 3).map(article => (
           <ArticlePreview
             key={article.id}
             article={article}
