@@ -49,7 +49,16 @@ export const parseGetSite = (response: ResponseSite): Data => {
         updatedAt: article.updated_at,
         excerpt: article.excerpt,
         image: article.featured_image
-          ? parseImage(article.featured_image)
+          ? {
+              id: article.featured_image.id,
+              title: article.featured_image.name,
+              alt: article.featured_image.alternativeText,
+              src: replaceAllImageURLs(article.featured_image.url, {
+                size: 400,
+              }),
+              width: article.featured_image.width,
+              height: article.featured_image.height,
+            }
           : null,
       })),
     products: response.products.map(item => ({
