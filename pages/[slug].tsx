@@ -48,6 +48,8 @@ const Article = (props: Data) => {
                 style={{ maxHeight: 400 }}
                 src={article.image.src}
                 alt={article.image.alt}
+                height={400}
+                width={article.image.width * (400 / article.image.height)}
               />
             </div>
           )}

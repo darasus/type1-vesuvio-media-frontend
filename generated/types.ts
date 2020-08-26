@@ -10,7 +10,7 @@ export interface ResponseSite {
     is_no_index: boolean;
     domain_name: string;
     created_by: null;
-    updated_by: null;
+    updated_by: ResponseUpdated_by;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -98,6 +98,12 @@ export interface ResponseThumbnail {
     width: number;
     height: number;
     name?: string;
+}
+export interface ResponseUpdated_by {
+    id: number;
+    username: null;
+    firstname: string;
+    lastname: string;
 }
 export interface ResponseArticlesItem {
     id: number;
