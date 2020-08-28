@@ -1,14 +1,15 @@
 import { getSite } from '../network/getSite';
 import { useRouter } from 'next/router';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, NextPageContext } from 'next';
 import { Data } from '../types/Data';
-import { Markdown } from '../components/Markdown';
+import { processor } from '../components/Markdown';
 import { NextSeo } from 'next-seo';
 import { Title } from '../components/Title';
 import { ProductPreview } from '../components/ProductPreview';
 import { ArticlePreview } from '../components/ArticlePreview';
+import ReactDOMServer from 'react-dom/server';
 
-const Article = (props: Data) => {
+const Article = (props: Data & { article: string }) => {
   const router = useRouter();
   const { slug } = router.query;
   const article = props.articles?.find(article => article.slug === slug);
@@ -59,9 +60,10 @@ const Article = (props: Data) => {
             </h1>
           </div>
         </div>
-        <div className="content mb-8 leading-relaxed">
-          <Markdown source={article.body} />
-        </div>
+        <div
+          className="content mb-8 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: props.article }}
+        ></div>
       </section>
       <section className="mb-20">
         <Title title="You might be interested in" className="mb-20" />
@@ -97,12 +99,19 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ctx => {
   const data = await getSite();
+  const { slug } = ctx.params;
+  const articleSource = data.articles?.find(article => article.slug === slug);
+
+  const article = ReactDOMServer.renderToString(
+    processor.processSync(articleSource.body).result
+  );
 
   return {
     props: {
       ...data,
+      article,
     },
   };
 };

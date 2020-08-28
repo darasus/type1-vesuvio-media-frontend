@@ -7,7 +7,7 @@ import React from 'react';
 import { ArticleImage } from '../ArticleImage';
 import clsx from 'clsx';
 
-var processor = unified()
+export const processor = unified()
   .use(markdown)
   .use(remark2rehype)
   .use(rehype2react, {
