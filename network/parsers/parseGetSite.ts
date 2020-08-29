@@ -1,6 +1,5 @@
 import { ResponseSite } from '../../generated/types';
 import { Data } from '../../types/Data';
-import { parseImage } from './parseImage';
 import { replaceAllImageURLs } from '../../utils/replaceAllImageURLs';
 import { parseISO, compareDesc } from 'date-fns';
 
@@ -29,7 +28,16 @@ export const parseGetSite = (response: ResponseSite): Data => {
       createdAt: response.home_page.created_at,
       updatedAt: response.home_page.updated_at,
       image: response.home_page.intro_image
-        ? parseImage(response.home_page.intro_image)
+        ? {
+            id: response.home_page.intro_image.id,
+            title: response.home_page.intro_image.name,
+            alt: response.home_page.intro_image.alternativeText,
+            src: replaceAllImageURLs(response.home_page.intro_image.url, {
+              quality: 'high',
+            }),
+            width: response.home_page.intro_image.width,
+            height: response.home_page.intro_image.height,
+          }
         : null,
     },
     primaryColor: response.primary_color,
@@ -70,7 +78,16 @@ export const parseGetSite = (response: ResponseSite): Data => {
       updatedAt: item.updated_at,
       site: item.site,
       shortDescription: item.short_description,
-      image: item.Image ? parseImage(item.Image) : null,
+      image: item.Image
+        ? {
+            id: item.Image.id,
+            title: item.Image.name,
+            alt: item.Image.alternativeText,
+            src: replaceAllImageURLs(item.Image.url, { quality: 'high' }),
+            width: item.Image.width,
+            height: item.Image.height,
+          }
+        : null,
       brand: item.brand_name,
     })),
   };

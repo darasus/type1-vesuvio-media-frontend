@@ -9,7 +9,10 @@ const sizeMap = {
  */
 export const replaceAllImageURLs = (
   string: string,
-  options?: { size: 'small' | 'medium' | 'large' | number }
+  options?: {
+    size?: 'small' | 'medium' | 'large' | number;
+    quality?: 'low' | 'medium' | 'high';
+  }
 ) => {
   const urlBaseRegExp = /storage.googleapis.com/gi;
   const imageTypeRegExp = /(.jpeg|.jpg|.png)+$/gi;
@@ -18,7 +21,7 @@ export const replaceAllImageURLs = (
     .replace(urlBaseRegExp, process.env.CDN_URL)
     .replace(
       imageTypeRegExp,
-      `$1?auto_optimize=low&width=${
+      `$1?auto_optimize=${options?.quality || 'low'}&width=${
         typeof options?.size === 'number'
           ? options?.size
           : sizeMap[options?.size || 'medium']
