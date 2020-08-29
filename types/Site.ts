@@ -8,4 +8,5 @@ export interface Site {
   isPublished: boolean;
   isNoIndex: boolean;
   domainName: string;
+  gaTrackingId: string;
 }

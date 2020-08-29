@@ -11,6 +11,7 @@ export interface ResponseSite {
     domain_name: string;
     created_by: null;
     updated_by: ResponseUpdated_by;
+    ga_tracking_id: string;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -118,8 +119,9 @@ export interface ResponseArticlesItem {
     is_published: boolean;
     domain_name: null;
     created_by: null | number;
-    updated_by: null | number;
+    updated_by: number;
     excerpt: string;
+    status: string;
     featured_image: ResponseFeatured_image | null;
 }
 export interface ResponseFeatured_image {

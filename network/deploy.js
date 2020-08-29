@@ -1,7 +1,7 @@
 const { createDeployment } = require('@vercel/client');
 const path = require('path');
 
-const deploy = async ({ projectName, siteId }) => {
+const deploy = async ({ projectName, siteId, gaTrackingId }) => {
   let deployment;
 
   for await (const event of createDeployment(
@@ -15,10 +15,12 @@ const deploy = async ({ projectName, siteId }) => {
       name: projectName,
       env: {
         SITE_ID: siteId.toString(),
+        GA_TRACKING_ID: gaTrackingId,
       },
       build: {
         env: {
           SITE_ID: siteId.toString(),
+          GA_TRACKING_ID: gaTrackingId,
         },
       },
       target: 'production',

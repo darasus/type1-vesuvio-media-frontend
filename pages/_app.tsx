@@ -3,6 +3,13 @@ import Head from 'next/head';
 import { Header } from '../components/Header';
 import { darken } from 'polished';
 import { Footer } from '../components/Footer';
+import React from 'react';
+import Router from 'next/router';
+import { pageview } from '../utils/gtag';
+
+if (process.env.GA_TRACKING_ID) {
+  Router.events.on('routeChangeComplete', url => pageview(url));
+}
 
 const App = ({ Component, pageProps }) => {
   if (pageProps?.site && !pageProps.site.isPublished) {

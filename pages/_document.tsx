@@ -1,15 +1,51 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentProps,
+  DocumentContext,
+} from 'next/document';
+import React from 'react';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+export default class MyDocument extends Document<
+  DocumentProps & { isProduction: boolean }
+> {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    return { ...initialProps, isProduction };
   }
 
   render() {
+    const { isProduction } = this.props;
+
     return (
       <Html className="text-black" lang="en">
-        <Head />
+        <Head>
+          {isProduction && process.env.GA_TRACKING_ID && (
+            <React.Fragment>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '${process.env.GA_TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                  `,
+                }}
+              />
+            </React.Fragment>
+          )}
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -18,5 +54,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;

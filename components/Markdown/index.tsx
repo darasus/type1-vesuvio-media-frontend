@@ -31,7 +31,7 @@ export const processor = unified()
                 {...item.props}
                 {...(item.props.href.substr(0, 1) === '/'
                   ? {}
-                  : { rel: 'nofollow' })}
+                  : { rel: 'nofollow', target: '_blank' })}
               />
             );
           }

@@ -10,6 +10,7 @@ async function main() {
     await deploy({
       projectName: `site-id-${site.id}`,
       siteId: site.id,
+      gaTrackingId: site.ga_tracking_id,
     });
   });
 }
