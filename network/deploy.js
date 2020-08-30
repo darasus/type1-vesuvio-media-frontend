@@ -24,6 +24,13 @@ const deploy = async ({ projectName, siteId, gaTrackingId }) => {
         },
       },
       target: 'production',
+      projectSettings: {
+        devCommand: null,
+        buildCommand: null,
+        outputDirectory: null,
+        rootDirectory: null,
+        framework: 'nextjs',
+      },
     }
   )) {
     if (event.type === 'error') {
