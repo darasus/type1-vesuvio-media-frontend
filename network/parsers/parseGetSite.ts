@@ -35,6 +35,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
             alt: response.home_page.intro_image.alternativeText,
             src: replaceAllImageURLs(response.home_page.intro_image.url, {
               quality: 'high',
+              size: 500,
             }),
             width: response.home_page.intro_image.width,
             height: response.home_page.intro_image.height,

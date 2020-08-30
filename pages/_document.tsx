@@ -28,6 +28,7 @@ export default class MyDocument extends Document<
             <React.Fragment>
               <script
                 async
+                defer
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
               />
               <script
