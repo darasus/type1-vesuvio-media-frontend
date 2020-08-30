@@ -23,19 +23,21 @@ export const ProductPreview: React.FC<Props> = ({
     >
       <div className="mx-auto flex flex-wrap">
         {product.image?.src && (
-          <img
-            className="lg:w-1/4 w-full lg:h-auto h-64 object-cover object-center rounded"
-            src={product.image?.src}
-            width={product.image?.width}
-            height={product.image?.height}
-            alt={product.title}
-          />
+          <div className="lg:w-1/4 w-full lg:h-auto flex items-center justify-center p-4">
+            <img
+              className="flex-shrink-0 flex-grow-0 max-h-56 max-w-full max-h-full w-auto lg:w-56 lg:h-auto"
+              src={product.image?.src}
+              width={product.image?.width}
+              height={product.image?.height}
+              alt={product.title}
+            />
+          </div>
         )}
         <div className="lg:w-3/4 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <span className="text-sm title-font text-gray-500 tracking-widest uppercase">
             {product.brand}
           </span>
-          <h3 className="text-gray-900 text-3xl title-font font-medium mb-1">
+          <h3 className="text-gray-900 text-3xl title-font font-medium mt-0 mb-1">
             {product.title}
           </h3>
           <div className="flex mb-4">

@@ -52,7 +52,7 @@ export interface ResponseIntro_image {
 }
 export interface ResponseFormats {
     large?: ResponseLarge;
-    small: ResponseSmall;
+    small?: ResponseSmall;
     medium?: ResponseMedium;
     thumbnail: ResponseThumbnail;
 }
@@ -179,6 +179,6 @@ export interface ResponseImage {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
-    created_by: null;
-    updated_by: null;
+    created_by: null | number;
+    updated_by: null | number;
 }
