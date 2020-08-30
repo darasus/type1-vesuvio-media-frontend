@@ -4,7 +4,9 @@ const appRoot = require('app-root-path');
 const text2png = require('text2png');
 
 const generateImages = async config => {
-  const response = await fetch(`${config.env.API_BASE}/sites/2`);
+  const response = await fetch(
+    `${config.env.API_BASE}/sites/${process.env.SITE_ID}`
+  );
   const site = await response.json();
   const pathToPublicLogo = path.join(appRoot + '/static/images/logo.png');
   const pathToPublicFavicon = path.join(appRoot + '/static/images/favicon.png');

@@ -122,6 +122,7 @@ export interface ResponseArticlesItem {
     updated_by: number;
     excerpt: string;
     status: string;
+    publish_at: null | string;
     featured_image: ResponseFeatured_image | null;
 }
 export interface ResponseFeatured_image {
