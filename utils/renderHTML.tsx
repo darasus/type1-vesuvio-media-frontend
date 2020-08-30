@@ -1,11 +1,10 @@
-import { FC, Fragment } from 'react';
+import React from 'react';
 import unified from 'unified';
 import markdown from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import rehype2react from 'rehype-react';
-import React from 'react';
-import { ArticleImage } from '../ArticleImage';
-import clsx from 'clsx';
+import { ArticleImage } from '../components/ArticleImage';
+import ReactDOMServer from 'react-dom/server';
 
 export const processor = unified()
   .use(markdown)
@@ -17,7 +16,7 @@ export const processor = unified()
       p: props => {
         return props.children.map((item, i) => {
           if (typeof item === 'object' && item.props.src) {
-            return <Fragment key={i}>{item}</Fragment>;
+            return <React.Fragment key={i}>{item}</React.Fragment>;
           }
 
           if (typeof item === 'object' && item.type === 'br') {
@@ -51,10 +50,6 @@ interface Props {
   className?: string;
 }
 
-export const Markdown: FC<Props> = ({ source, className }) => {
-  return (
-    <section className={clsx('leading-relaxed', className)}>
-      {processor.processSync(source).result}
-    </section>
-  );
+export const renderHTML = (source: string) => {
+  return ReactDOMServer.renderToString(processor.processSync(source).result);
 };

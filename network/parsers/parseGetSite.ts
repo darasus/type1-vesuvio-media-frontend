@@ -2,6 +2,7 @@ import { ResponseSite } from '../../generated/types';
 import { Data } from '../../types/Data';
 import { replaceAllImageURLs } from '../../utils/replaceAllImageURLs';
 import { parseISO, compareDesc } from 'date-fns';
+import { renderHTML } from '../../utils/renderHTML';
 
 export const parseGetSite = (response: ResponseSite): Data => {
   return {
@@ -22,10 +23,10 @@ export const parseGetSite = (response: ResponseSite): Data => {
       title: response.home_page.title,
       seoTitle: response.home_page.seo_title,
       seoDescription: response.home_page.seo_description,
-      introductionText: replaceAllImageURLs(
-        response.home_page.introduction_text
+      introductionText: renderHTML(
+        replaceAllImageURLs(response.home_page.introduction_text)
       ),
-      mainText: replaceAllImageURLs(response.home_page.main_text),
+      mainText: renderHTML(replaceAllImageURLs(response.home_page.main_text)),
       createdAt: response.home_page.created_at,
       updatedAt: response.home_page.updated_at,
       image: response.home_page.intro_image
@@ -54,7 +55,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
         seoDescription: article.seo_description,
         title: article.title,
         slug: article.slug,
-        body: replaceAllImageURLs(article.body, { size: 500 }),
+        body: renderHTML(replaceAllImageURLs(article.body, { size: 500 })),
         createdAt: article.created_at,
         updatedAt: article.updated_at,
         excerpt: article.excerpt,

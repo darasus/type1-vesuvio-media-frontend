@@ -1,11 +1,9 @@
 import { GetStaticProps } from 'next';
 import { getSite } from '../network/getSite';
 import { Data } from '../types/Data';
-import clsx from 'clsx';
 import { ArticlePreview } from '../components/ArticlePreview';
 import { ProductPreview } from '../components/ProductPreview';
 import { NextSeo } from 'next-seo';
-import { Markdown } from '../components/Markdown';
 import { Title } from '../components/Title';
 
 const Home = (props: Data) => {
@@ -23,7 +21,11 @@ const Home = (props: Data) => {
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 leading-tight">
               {props.homePage.title}
             </h1>
-            <Markdown source={props.homePage.introductionText} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: props.homePage.introductionText,
+              }}
+            />
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             {props.homePage.image && (
@@ -47,7 +49,12 @@ const Home = (props: Data) => {
           />
         ))}
       </section>
-      <Markdown className="mb-20" source={props.homePage.mainText} />
+      <div
+        className="mb-20"
+        dangerouslySetInnerHTML={{
+          __html: props.homePage.mainText,
+        }}
+      />
       <section>
         <Title title="Latest articles" className="mb-20" />
         {props.articles.map(article => (
