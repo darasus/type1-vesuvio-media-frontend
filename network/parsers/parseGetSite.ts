@@ -46,7 +46,6 @@ export const parseGetSite = (response: ResponseSite): Data => {
     },
     primaryColor: response.primary_color,
     articles: response.articles
-      .filter(article => article.is_published)
       .sort((a, b) =>
         compareDesc(parseISO(a.created_at), parseISO(b.created_at))
       )

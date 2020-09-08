@@ -78,10 +78,10 @@ export const ProductPreview: React.FC<Props> = ({
           </div>
           <p className="leading-relaxed">{product.shortDescription}</p>
           <div className="flex border-t-2 border-gray-100 mt-3 pt-3">
-            <a href={product.url} target="_blank">
+            <a href={product.url} target="_blank" rel="nofollow">
               <ButtonLink className="flex-shrink mr-4">Buy now</ButtonLink>
             </a>
-            <a href={product.url} target="_blank">
+            <a href={product.url} target="_blank" rel="nofollow">
               <ButtonLink className="flex-shrink" variant="secondary">
                 Learn more
               </ButtonLink>
