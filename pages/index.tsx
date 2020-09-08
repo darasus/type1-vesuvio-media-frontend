@@ -39,7 +39,10 @@ const Home = (props: Data) => {
         </div>
       </section>
       <section className="mb-20">
-        <Title title="You might be interested in" className="mb-20" />
+        <Title
+          title={props.site.productListTitle || 'You might be interested in'}
+          className="mb-20"
+        />
         {props.products.map(product => (
           <ProductPreview
             key={product.id}

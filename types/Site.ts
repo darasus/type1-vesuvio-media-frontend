@@ -9,4 +9,5 @@ export interface Site {
   isNoIndex: boolean;
   domainName: string;
   gaTrackingId: string;
+  productListTitle: string | null;
 }

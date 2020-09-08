@@ -17,6 +17,7 @@ export const parseGetSite = (response: ResponseSite): Data => {
       isNoIndex: response.is_no_index,
       domainName: response.domain_name,
       gaTrackingId: response.ga_tracking_id,
+      productListTitle: response.product_list_title,
     },
     homePage: {
       id: response.home_page.id,

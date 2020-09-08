@@ -12,6 +12,7 @@ export interface ResponseSite {
     created_by: null;
     updated_by: ResponseUpdated_by;
     ga_tracking_id: string;
+    product_list_title: string;
     articles: ResponseArticlesItem[];
     products: ResponseProductsItem[];
 }
@@ -154,10 +155,10 @@ export interface ResponseProductsItem {
     site: number;
     created_at: string;
     updated_at: string;
-    Description: string | null;
+    Description: null;
     short_description: string;
     created_by: null;
-    updated_by: null | number;
+    updated_by: number;
     brand_name: string;
     Image: ResponseImage;
 }
@@ -179,6 +180,6 @@ export interface ResponseImage {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
-    created_by: null | number;
-    updated_by: null | number;
+    created_by: number;
+    updated_by: number;
 }
