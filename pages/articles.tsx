@@ -5,7 +5,6 @@ import { ArticlePreview } from '../components/ArticlePreview';
 import { NextSeo } from 'next-seo';
 
 const About = (props: Data) => {
-  console.log(props);
   return (
     <>
       <NextSeo

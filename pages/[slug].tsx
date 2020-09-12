@@ -102,8 +102,6 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const data = await getSite();
-  const { slug } = ctx.params;
-  const articleSource = data.articles?.find(article => article.slug === slug);
 
   return {
     props: {
