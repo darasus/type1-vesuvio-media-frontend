@@ -55,14 +55,14 @@ export const Footer = (props: Data) => {
           </span>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <Link href="/privacy-policy" className="text-gray-500">
-              <a>
+              <a rel="nofollow">
                 <span className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4 underline">
                   {`Privacy policy`}
                 </span>
               </a>
             </Link>
             <Link href="/terms-of-service" className="text-gray-500">
-              <a>
+              <a rel="nofollow">
                 <span className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4 underline">
                   {`Temrs of Service`}
                 </span>
