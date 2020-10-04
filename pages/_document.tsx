@@ -22,7 +22,10 @@ export default class MyDocument extends Document<
     const { isProduction } = this.props;
 
     return (
-      <Html className="text-black" lang="en">
+      <Html
+        className="sm:text-lg lg:text-xl text-black antialiased leading-tight"
+        lang="en"
+      >
         <Head>
           {isProduction && process.env.GA_TRACKING_ID && (
             <React.Fragment>

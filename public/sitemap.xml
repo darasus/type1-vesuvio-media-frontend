@@ -6,34 +6,26 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthyspineclub.com/disclaimer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://healthyspineclub.com</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://healthyspineclub.com/privacy</loc>
+    <loc>https://healthyspineclub.com/privacy-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthyspineclub.com/terms-of-service</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc
-      >https://healthyspineclub.com/types-of-back-pain-causes-risk-factors-symptoms-and-treatment</loc
+      >https://healthyspineclub.com/kidney-pain-and-back-pain-the-similarities-differences-causes-and-treatment</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/severe-upper-back-pain-occurrences-causes-and-treatment-alternatives</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,7 +33,7 @@
     <loc
       >https://healthyspineclub.com/lower-back-pain-causes-diagnosis-treatment-relief</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,15 +41,7 @@
     <loc
       >https://healthyspineclub.com/tight-hamstrings-and-back-pain-causes-and-relief-excercise</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/lower-back-strengthening-exercises-and-methods</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -65,55 +49,15 @@
     <loc
       >https://healthyspineclub.com/back-pain-during-period-causes-diagnosis-and-tips-on-reducing-menstrual-back-pain</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc
-      >https://healthyspineclub.com/sudden-lower-back-pain-causes-symptoms-and-treatments</loc
+      >https://healthyspineclub.com/severe-upper-back-pain-occurrences-causes-and-treatment-alternatives</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/kidney-pain-and-back-pain-the-similarities-differences-causes-and-treatment</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/back-pain-pregnancy-causes-and-helpful-tips</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/home-remedies-for-back-pain-cost-effective-and-efficient-remedies</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/stretching-lower-back-exercises-moves-and-benefits</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/lower-back-strain-causes-symptoms-and-treatment</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-04T15:09:57.462Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -121,15 +65,7 @@
     <loc
       >https://healthyspineclub.com/severe-back-spasm-causes-diagnosis-and-remedies</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc
-      >https://healthyspineclub.com/middle-back-pain-occurrences-causes-and-treatment-options</loc
-    >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -137,7 +73,71 @@
     <loc
       >https://healthyspineclub.com/tending-to-neck-and-back-pain-causes-preventive-measures-and-remedies</loc
     >
-    <lastmod>2020-09-09T07:48:43.554Z</lastmod>
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/middle-back-pain-occurrences-causes-and-treatment-options</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/sudden-lower-back-pain-causes-symptoms-and-treatments</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/home-remedies-for-back-pain-cost-effective-and-efficient-remedies</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/types-of-back-pain-causes-risk-factors-symptoms-and-treatment</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/back-pain-pregnancy-causes-and-helpful-tips</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/stretching-lower-back-exercises-moves-and-benefits</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/lower-back-strengthening-exercises-and-methods</loc
+    >
+    <lastmod>2020-10-03T16:29:13.029Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc
+      >https://healthyspineclub.com/lower-back-strain-causes-symptoms-and-treatment</loc
+    >
+    <lastmod>2020-10-03T16:26:37.935Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

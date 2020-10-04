@@ -39,8 +39,6 @@ export const processor = unified()
             return null;
           }
 
-          console.log(item);
-
           return item;
         });
       },

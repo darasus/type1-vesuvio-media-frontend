@@ -103,7 +103,7 @@ export interface ResponseThumbnail {
 }
 export interface ResponseUpdated_by {
     id: number;
-    username: null;
+    username: string;
     firstname: string;
     lastname: string;
 }

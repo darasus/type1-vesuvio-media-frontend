@@ -2,8 +2,24 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+::-moz-selection {
+    color: white;
+    background: var(--primary-color-400);
+}
+
+::selection {
+    color: white;
+    background: var(--primary-color-400);
+}
+
+h1, h2, h3 {
+    @apply font-medium;
+    @apply mt-6;
+    @apply mb-2;
+}
+
 h1 {
-    @apply text-4xl;
+    @apply text-5xl;
 }
 
 h2 {
@@ -11,13 +27,15 @@ h2 {
 }
 
 h3 {
+    @apply text-3xl;
+}
+
+h4 {
     @apply text-2xl;
 }
 
-h1, h2, h3 {
-    @apply font-medium;
-    @apply mt-4;
-    @apply mb-2;
+h5 {
+    @apply text-2xl;
 }
 
 ul {
@@ -45,5 +63,5 @@ p {
 
 .content a {
     color: var(--primary-color-500);
-    text-decoration: underline;
+    text-decoration: none;
 }
