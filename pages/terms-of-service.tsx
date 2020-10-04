@@ -4,7 +4,7 @@ import { Data } from '../types/Data';
 import { getSite } from '../network/getSite';
 import { getTermsOfService } from '../network/getTermsOfService';
 
-const TermsOfService = (
+const TermsOfServicePage = (
   props: Data & { termsOfService: { body: string; title: string; id: number } }
 ) => {
   return (
@@ -44,4 +44,4 @@ export const getStaticProps: GetStaticProps = async ctx => {
   };
 };
 
-export default TermsOfService;
+export default TermsOfServicePage;

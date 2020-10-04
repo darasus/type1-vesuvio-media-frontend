@@ -7,7 +7,7 @@ import { Title } from '../components/Title';
 import { ProductPreview } from '../components/ProductPreview';
 import { ArticlePreview } from '../components/ArticlePreview';
 
-const Article = (props: Data) => {
+const ArticlePage = (props: Data) => {
   const router = useRouter();
   const { slug } = router.query;
   const article = props.articles?.find(article => article.slug === slug);
@@ -110,4 +110,4 @@ export const getStaticProps: GetStaticProps = async ctx => {
   };
 };
 
-export default Article;
+export default ArticlePage;

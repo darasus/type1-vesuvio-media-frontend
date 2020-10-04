@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import clsx from 'clsx';
 import React from 'react';
 import { Data } from '../../types/Data';
 

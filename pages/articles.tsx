@@ -4,7 +4,7 @@ import { Data } from '../types/Data';
 import { ArticlePreview } from '../components/ArticlePreview';
 import { NextSeo } from 'next-seo';
 
-const About = (props: Data) => {
+const ArticlesPage = (props: Data) => {
   return (
     <>
       <NextSeo
@@ -36,4 +36,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default About;
+export default ArticlesPage;

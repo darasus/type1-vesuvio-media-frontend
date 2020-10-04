@@ -5,7 +5,7 @@ import { getSite } from '../network/getSite';
 import { renderHTML } from '../utils/renderHTML';
 import { getPrivacyPolicy } from '../network/getPrivacyPolicy';
 
-const PrivacyPolicy = (
+const PrivacyPolicyPage = (
   props: Data & { privacyPolicy: { body: string; title: string; id: number } }
 ) => {
   return (
@@ -45,4 +45,4 @@ export const getStaticProps: GetStaticProps = async ctx => {
   };
 };
 
-export default PrivacyPolicy;
+export default PrivacyPolicyPage;

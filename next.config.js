@@ -7,7 +7,7 @@ const { generateSitemap } = require('./scripts/generate-sitemap');
 const { generateImages } = require('./scripts/generate-images');
 
 const nextConfig = {
-  trailingSlash: true,
+  trailingSlash: false,
   env: {
     API_BASE: 'https://type1.vesuviomedia.com',
     CDN_URL: 'vesuvio-media.b-cdn.net',
