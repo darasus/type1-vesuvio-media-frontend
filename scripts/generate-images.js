@@ -12,12 +12,12 @@ const generateImages = async config => {
   const pathToPublicFavicon = path.join(appRoot + '/static/images/favicon.png');
   const title = site.title;
   const color = site.primary_color;
-  const font = '80px Futura';
+  const font = '40px Futura';
   const options = {
     color,
     font,
     localFontPath: path.join(
-      appRoot + '/static/fonts/futura/FuturaStdBook.otf'
+      appRoot + '/static/fonts/futura/FuturaStdLight.otf'
     ),
     localFontName: 'Futura',
   };
