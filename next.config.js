@@ -11,6 +11,7 @@ const nextConfig = {
   env: {
     API_BASE: 'https://type1.vesuviomedia.com',
     CDN_URL: 'vesuvio-media.b-cdn.net',
+    GA_TRACKING_ID: process.env.GA_TRACKING_ID,
   },
 };
 

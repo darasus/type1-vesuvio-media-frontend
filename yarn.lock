@@ -1284,29 +1284,29 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@vercel/build-utils@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-2.4.2.tgz#38604af38faa7d94e39ef98c9e579ad34579b0e9"
-  integrity sha512-9KymcPgUYkPxt4VK7HepM7yWN1ZUt3XzNKn5ECkGhHAHF31rmr9gEGlZZlq5KcXPsBps4A/BOuSBwK8EFOXP/w==
+"@vercel/build-utils@2.5.4":
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-2.5.4.tgz#ebf7b9afabaef57cb0a89cf0c98d61fc34830579"
+  integrity sha512-xPvYkxhpBXNIZQUrsmC3g58Heapaev4D8vrH3UcBgsvttU8uTQiuuISOOeTwZpufPxgZT5wgF0DRBybEulnCew==
 
 "@vercel/build-utils@^2.4.0":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-2.5.3.tgz#2f935105c1b9378df4408dc7b638879b06e7442e"
   integrity sha512-jsvfTLbduwVuexC8LPO58z2qByEhlb8469s2mZQUkCjLxkX1DzW66QB7N68ymzd8rBPAg5n2hi4Zc5NxLHDXLw==
 
-"@vercel/client@^8.2.1":
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/@vercel/client/-/client-8.2.1.tgz#33923a09ef50880ea2c91eb3c3330ee190fc90a8"
-  integrity sha512-+W5wganH3B8kZ2zNFKvKbRhQU/LlerqeANyL6C5JkLpvMso6QPqGD3pFVccZ9FuHaWw5KvUbv1xjs9V+8DhF6w==
+"@vercel/client@^9.0.3":
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/@vercel/client/-/client-9.0.3.tgz#338ab0c973fba2cdb22e0b9a08462160c21c5f61"
+  integrity sha512-+osYm7/rDsz5PfTEwYvT+Ke8ItLvy/lAe06ttlRQeu/cuExcX31iH1GnYWLC5ioTIwnzxzMTaIVIoQ+geX9Y/Q==
   dependencies:
-    "@vercel/build-utils" "2.4.2"
+    "@vercel/build-utils" "2.5.4"
     "@zeit/fetch" "5.2.0"
     async-retry "1.2.3"
     async-sema "3.0.0"
     fs-extra "8.0.1"
     ignore "4.0.6"
     ms "2.1.2"
-    node-fetch "2.6.0"
+    node-fetch "2.6.1"
     querystring "^0.2.0"
     recursive-readdir "2.2.2"
     sleep-promise "8.0.1"
