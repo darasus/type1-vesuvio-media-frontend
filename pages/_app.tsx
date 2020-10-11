@@ -11,14 +11,12 @@ const App = ({ Component, pageProps }) => {
   const router = useRouter();
 
   React.useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('routeChangeComplete', pageview);
+
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('routeChangeComplete', pageview);
     };
-  }, [router.events]);
+  }, [router]);
 
   return (
     <>
