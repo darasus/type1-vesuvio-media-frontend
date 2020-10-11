@@ -4,17 +4,21 @@ import { Header } from '../components/Header';
 import { darken } from 'polished';
 import { Footer } from '../components/Footer';
 import React from 'react';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { pageview } from '../utils/gtag';
 
-if (process.env.GA_TRACKING_ID) {
-  Router.events.on('routeChangeComplete', url => pageview(url));
-}
-
 const App = ({ Component, pageProps }) => {
-  if (pageProps?.site && !pageProps.site.isPublished) {
-    return <div>Site is not published yet...</div>;
-  }
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>

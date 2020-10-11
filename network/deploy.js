@@ -4,6 +4,8 @@ const path = require('path');
 const deploy = async ({ projectName, siteId, gaTrackingId }) => {
   let deployment;
 
+  console.log(gaTrackingId);
+
   for await (const event of createDeployment(
     {
       token: 'qy5l9zSArirn6f1214G3xADi',
