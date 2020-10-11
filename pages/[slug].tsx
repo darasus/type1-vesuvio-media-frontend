@@ -59,7 +59,7 @@ const ArticlePage = (props: Data) => {
           </div>
         </div>
         <div
-          className="content mb-8 leading-relaxed"
+          className="container max-w-2xl mb-8 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: article.body }}
         ></div>
       </section>

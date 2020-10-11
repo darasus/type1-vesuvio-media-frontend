@@ -53,7 +53,7 @@ const Home = (props: Data) => {
         ))}
       </section>
       <div
-        className="mb-20"
+        className="container max-w-2xl mb-20"
         dangerouslySetInnerHTML={{
           __html: props.homePage.mainText,
         }}
