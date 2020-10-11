@@ -64,31 +64,31 @@ const ArticlePage = (props: Data) => {
             dangerouslySetInnerHTML={{ __html: article.body }}
           ></div>
         </section>
-        <section className="mb-20">
-          <Title
-            title={props.site.productListTitle || 'You might be interested in'}
-            className="mb-20"
-          />
-          {props.products.map(product => (
-            <ProductPreview
-              data={props}
-              key={product.id}
-              product={product}
-              className="mb-10"
-            />
-          ))}
-        </section>
-        <section>
-          <Title title="Latest articles" className="mb-20" />
-          {props.articles.slice(0, 3).map(article => (
-            <ArticlePreview
-              key={article.id}
-              article={article}
-              className="mb-10"
-            />
-          ))}
-        </section>
       </div>
+      <section className="mb-20">
+        <Title
+          title={props.site.productListTitle || 'You might be interested in'}
+          className="mb-20"
+        />
+        {props.products.map(product => (
+          <ProductPreview
+            data={props}
+            key={product.id}
+            product={product}
+            className="mb-10"
+          />
+        ))}
+      </section>
+      <section>
+        <Title title="Latest articles" className="mb-20" />
+        {props.articles.slice(0, 3).map(article => (
+          <ArticlePreview
+            key={article.id}
+            article={article}
+            className="mb-10"
+          />
+        ))}
+      </section>
     </>
   );
 };
