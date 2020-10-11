@@ -38,55 +38,57 @@ const ArticlePage = (props: Data) => {
             : {}),
         }}
       />
-      <section className="mb-20">
-        <div className="flex md:flex-row flex-col items-center mb-5">
-          {article.image?.src && (
-            <div className="overflow-hidden rounded-lg md:mr-10">
-              <img
-                className=""
-                style={{ maxHeight: 400 }}
-                src={article.image.src}
-                alt={article.image.alt}
-                height={400}
-                width={article.image.width * (400 / article.image.height)}
-              />
+      <div className="container max-w-2xl">
+        <section className="mb-20">
+          <div className="flex md:flex-row flex-col items-center mb-5">
+            {article.image?.src && (
+              <div className="overflow-hidden rounded-lg md:mr-10">
+                <img
+                  className=""
+                  style={{ maxHeight: 400 }}
+                  src={article.image.src}
+                  alt={article.image.alt}
+                  height={400}
+                  width={article.image.width * (400 / article.image.height)}
+                />
+              </div>
+            )}
+            <div className="">
+              <h1 className="text-4xl mb-4 font-bold leading-tight">
+                {article.title}
+              </h1>
             </div>
-          )}
-          <div className="">
-            <h1 className="text-4xl mb-4 font-bold leading-tight">
-              {article.title}
-            </h1>
           </div>
-        </div>
-        <div
-          className="container max-w-2xl mb-8 leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: article.body }}
-        ></div>
-      </section>
-      <section className="mb-20">
-        <Title
-          title={props.site.productListTitle || 'You might be interested in'}
-          className="mb-20"
-        />
-        {props.products.map(product => (
-          <ProductPreview
-            data={props}
-            key={product.id}
-            product={product}
-            className="mb-10"
+          <div
+            className="mb-8 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: article.body }}
+          ></div>
+        </section>
+        <section className="mb-20">
+          <Title
+            title={props.site.productListTitle || 'You might be interested in'}
+            className="mb-20"
           />
-        ))}
-      </section>
-      <section>
-        <Title title="Latest articles" className="mb-20" />
-        {props.articles.slice(0, 3).map(article => (
-          <ArticlePreview
-            key={article.id}
-            article={article}
-            className="mb-10"
-          />
-        ))}
-      </section>
+          {props.products.map(product => (
+            <ProductPreview
+              data={props}
+              key={product.id}
+              product={product}
+              className="mb-10"
+            />
+          ))}
+        </section>
+        <section>
+          <Title title="Latest articles" className="mb-20" />
+          {props.articles.slice(0, 3).map(article => (
+            <ArticlePreview
+              key={article.id}
+              article={article}
+              className="mb-10"
+            />
+          ))}
+        </section>
+      </div>
     </>
   );
 };

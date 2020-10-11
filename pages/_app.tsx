@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { darken } from 'polished';
 import { Footer } from '../components/Footer';
 import React from 'react';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { pageview } from '../utils/gtag';
 
 const App = ({ Component, pageProps }) => {
