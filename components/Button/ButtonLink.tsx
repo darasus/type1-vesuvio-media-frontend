@@ -1,16 +1,19 @@
 import { HTMLProps } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { event } from '../../utils/gtag';
 
 type Props = {
   variant?: 'primary' | 'secondary';
   className?: string;
+  onClick?: React.MouseEventHandler;
 };
 
 export const ButtonLink: React.FC<Props> = ({
   children,
   variant = 'primary',
   className,
+  onClick,
 }) => {
   return (
     <span
@@ -22,6 +25,7 @@ export const ButtonLink: React.FC<Props> = ({
         },
         className
       )}
+      onClick={onClick}
     >
       {children}
     </span>

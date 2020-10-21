@@ -2,6 +2,7 @@ import { Product } from '../../types/Product';
 import clsx from 'clsx';
 import { ButtonLink } from '../Button';
 import { Data } from '../../types/Data';
+import { event } from '../../utils/gtag';
 
 interface Props {
   product: Product;
@@ -79,10 +80,31 @@ export const ProductPreview: React.FC<Props> = ({
           <p className="leading-relaxed">{product.shortDescription}</p>
           <div className="flex border-t-2 border-gray-100 mt-3 pt-3">
             <a href={product.url} target="_blank" rel="nofollow">
-              <ButtonLink className="flex-shrink mr-4">Buy now</ButtonLink>
+              <ButtonLink
+                onClick={() =>
+                  event({
+                    action: 'outClick',
+                    category: 'clickbank',
+                    label: product.title,
+                  })
+                }
+                className="flex-shrink mr-4"
+              >
+                Buy now
+              </ButtonLink>
             </a>
             <a href={product.url} target="_blank" rel="nofollow">
-              <ButtonLink className="flex-shrink" variant="secondary">
+              <ButtonLink
+                onClick={() =>
+                  event({
+                    action: 'outClick',
+                    category: 'clickbank',
+                    label: product.title,
+                  })
+                }
+                className="flex-shrink"
+                variant="secondary"
+              >
                 Learn more
               </ButtonLink>
             </a>
