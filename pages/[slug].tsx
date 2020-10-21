@@ -38,7 +38,7 @@ const ArticlePage = (props: Data) => {
             : {}),
         }}
       />
-      <div className="container max-w-2xl">
+      <div className="container">
         <section className="mb-20">
           <div className="flex md:flex-row flex-col items-center mb-5">
             {article.image?.src && (
