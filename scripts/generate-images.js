@@ -8,8 +8,8 @@ const generateImages = async config => {
     `${config.env.API_BASE}/sites/${process.env.SITE_ID}`
   );
   const site = await response.json();
-  const pathToPublicLogo = path.join(appRoot + '/static/images/logo.png');
-  const pathToPublicFavicon = path.join(appRoot + '/static/images/favicon.png');
+  const pathToPublicLogo = path.join(appRoot + '/public/images/logo.png');
+  const pathToPublicFavicon = path.join(appRoot + '/public/images/favicon.png');
   const title = site.title;
   const color = site.primary_color;
   const font = '40px Futura';
@@ -17,7 +17,7 @@ const generateImages = async config => {
     color,
     font,
     localFontPath: path.join(
-      appRoot + '/static/fonts/futura/FuturaStdLight.otf'
+      appRoot + '/public/fonts/futura/FuturaStdLight.otf'
     ),
     localFontName: 'Futura',
   };

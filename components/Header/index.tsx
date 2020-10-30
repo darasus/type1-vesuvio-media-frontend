@@ -51,7 +51,7 @@ export const Header: React.FC<Data> = props => {
           <div className="flex-1 text-primary-500">
             <Link href="/">
               <a>
-                <img className="h-8" src="/static/images/logo.png" alt="logo" />
+                <img className="h-8" src="/images/logo.png" alt="logo" />
               </a>
             </Link>
           </div>
