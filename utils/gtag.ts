@@ -1,5 +1,4 @@
 export const pageview = (url: URL) => {
-  console.log(process.env.GA_TRACKING_ID);
   if (process.env.NODE_ENV === 'production') {
     (window as any).gtag('config', process.env.GA_TRACKING_ID, {
       page_path: url,
