@@ -33,41 +33,46 @@ const Home = (props: Data) => {
                 src={props.homePage.image.src}
                 height={props.homePage.image.height}
                 width={props.homePage.image.width}
+                alt=""
               />
             )}
           </div>
         </div>
       </section>
-      <section className="mb-20">
-        <Title
-          title={props.site.productListTitle || 'You might be interested in'}
-          className="mb-20"
-        />
-        {props.products.map(product => (
-          <ProductPreview
-            key={product.id}
-            product={product}
-            className="mb-10"
-            data={props}
+      {props.products.length > 0 && (
+        <section className="mb-20">
+          <Title
+            title={props.site.productListTitle || 'You might be interested in'}
+            className="mb-20"
           />
-        ))}
-      </section>
+          {props.products.map(product => (
+            <ProductPreview
+              key={product.id}
+              product={product}
+              className="mb-10"
+              data={props}
+            />
+          ))}
+        </section>
+      )}
       <div
         className="container mb-20"
         dangerouslySetInnerHTML={{
           __html: props.homePage.mainText,
         }}
       />
-      <section>
-        <Title title="Latest articles" className="mb-20" />
-        {props.articles.map(article => (
-          <ArticlePreview
-            key={article.id}
-            article={article}
-            className="mb-10"
-          />
-        ))}
-      </section>
+      {props.articles.length > 0 && (
+        <section>
+          <Title title="Latest articles" className="mb-20" />
+          {props.articles.map(article => (
+            <ArticlePreview
+              key={article.id}
+              article={article}
+              className="mb-10"
+            />
+          ))}
+        </section>
+      )}
     </>
   );
 };

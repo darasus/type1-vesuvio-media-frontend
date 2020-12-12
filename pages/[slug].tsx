@@ -65,30 +65,34 @@ const ArticlePage = (props: Data) => {
           ></div>
         </section>
       </div>
-      <section className="mb-20">
-        <Title
-          title={props.site.productListTitle || 'You might be interested in'}
-          className="mb-20"
-        />
-        {props.products.map(product => (
-          <ProductPreview
-            data={props}
-            key={product.id}
-            product={product}
-            className="mb-10"
+      {props.products.length > 0 && (
+        <section className="mb-20">
+          <Title
+            title={props.site.productListTitle || 'You might be interested in'}
+            className="mb-20"
           />
-        ))}
-      </section>
-      <section>
-        <Title title="Latest articles" className="mb-20" />
-        {props.articles.slice(0, 3).map(article => (
-          <ArticlePreview
-            key={article.id}
-            article={article}
-            className="mb-10"
-          />
-        ))}
-      </section>
+          {props.products.map(product => (
+            <ProductPreview
+              data={props}
+              key={product.id}
+              product={product}
+              className="mb-10"
+            />
+          ))}
+        </section>
+      )}
+      {props.articles.length > 0 && (
+        <section>
+          <Title title="Latest articles" className="mb-20" />
+          {props.articles.slice(0, 3).map(article => (
+            <ArticlePreview
+              key={article.id}
+              article={article}
+              className="mb-10"
+            />
+          ))}
+        </section>
+      )}
     </>
   );
 };

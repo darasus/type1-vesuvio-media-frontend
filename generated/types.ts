@@ -119,7 +119,7 @@ export interface ResponseArticlesItem {
     seo_description: string;
     is_published: boolean;
     domain_name: null;
-    created_by: number | null;
+    created_by: null | number;
     updated_by: number;
     excerpt: string;
     status: string;
@@ -144,8 +144,8 @@ export interface ResponseFeatured_image {
     provider_metadata: null;
     created_at: string;
     updated_at: string;
-    created_by: number | null;
-    updated_by: number | null;
+    created_by: null | number;
+    updated_by: null | number;
 }
 export interface ResponseProductsItem {
     id: number;
