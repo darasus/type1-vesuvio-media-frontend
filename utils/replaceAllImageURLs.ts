@@ -1,3 +1,5 @@
+import qs from 'qs';
+
 const sizeMap = {
   small: 500,
   medium: 1000,
@@ -15,16 +17,17 @@ export const replaceAllImageURLs = (
   }
 ) => {
   const urlBaseRegExp = /storage.googleapis.com/gi;
-  const imageTypeRegExp = /(.jpeg|.jpg|.png)+$/gi;
+  const imageTypeRegExp = /(https?:\/\/.*\.(?:png|jpg))/gi;
+
+  const queryString = qs.stringify({
+    auto_optimize: options?.quality || 'low',
+    width:
+      typeof options?.size === 'number'
+        ? options?.size
+        : sizeMap[options?.size || 'medium'],
+  });
 
   return string
     .replace(urlBaseRegExp, process.env.CDN_URL)
-    .replace(
-      imageTypeRegExp,
-      `$1?auto_optimize=${options?.quality || 'low'}&width=${
-        typeof options?.size === 'number'
-          ? options?.size
-          : sizeMap[options?.size || 'medium']
-      }`
-    );
+    .replace(imageTypeRegExp, `$1?${queryString}`);
 };

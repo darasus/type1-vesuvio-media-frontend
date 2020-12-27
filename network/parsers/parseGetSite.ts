@@ -27,7 +27,9 @@ export const parseGetSite = (response: ResponseSite): Data => {
       introductionText: renderHTML(
         replaceAllImageURLs(response.home_page.introduction_text)
       ),
-      mainText: renderHTML(replaceAllImageURLs(response.home_page.main_text)),
+      mainText: renderHTML(
+        replaceAllImageURLs(response.home_page.main_text, { size: 'small' })
+      ),
       createdAt: response.home_page.created_at,
       updatedAt: response.home_page.updated_at,
       image: response.home_page.intro_image

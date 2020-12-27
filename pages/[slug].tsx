@@ -62,7 +62,7 @@ const ArticlePage = (props: Data) => {
           <div
             className="mb-8 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: article.body }}
-          ></div>
+          />
         </section>
       </div>
       {props.products.length > 0 && (

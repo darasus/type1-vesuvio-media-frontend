@@ -28,6 +28,7 @@
     "next-compose-plugins": "^2.2.0",
     "next-seo": "^4.7.3",
     "polished": "^3.6.5",
+    "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rehype-react": "^6.1.0",
