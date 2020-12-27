@@ -9,7 +9,7 @@ const generateSitemap = async config => {
     '!pages/[*.tsx',
     '!pages/api',
   ]);
-  const response = await fetch(`${config.env.API_BASE}/sites/2`);
+  const response = await fetch(`${config.env.API_BASE}/sites/${process.env.SITE_ID}`);
   const site = await response.json();
   const baseUrl = `https://${site.domain_name}`;
 
